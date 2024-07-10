@@ -7,6 +7,8 @@ TERM = "xterm-256color"
 dynamic_padding = false
 opacity = 0.95
 
+option_as_alt = "Both"
+
 [window.padding]
 x = 5
 y = 5
@@ -31,5 +33,7 @@ family = "FantasqueSansM Nerd Font"
 style = "Regular"
 
 import = [
-	"~/.config/alacritty/catppuccin/catppuccin-mocha.toml",
+	# "~/.config/alacritty/catppuccin/catppuccin-mocha.toml",
+	# "~/.config/alacritty/themes/themes/catpuccin-latte.toml",
+	 "~/.config/alacritty/themes/themes/carbonfox.toml",
 	]
