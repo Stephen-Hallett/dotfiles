@@ -29,6 +29,9 @@ source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
+# ---- Fuzzy Finder ----
+source <(fzf --zsh)
+
 # history setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
