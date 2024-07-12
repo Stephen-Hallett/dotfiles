@@ -30,6 +30,7 @@ elif [[ $(grep -i Microsoft /proc/version) ]]; then
 [shell]
     program = \"wsl\"" >> .config/alacritty/alacritty.toml
 	fi
+	cp -r ~/.config/alacritty /mnt/c/users/stevo/AppData
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
