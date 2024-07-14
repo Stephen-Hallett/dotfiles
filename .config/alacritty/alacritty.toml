@@ -36,6 +36,3 @@ size = 14
   family = "FantasqueSansM Nerd Font"
   style = "Regular"
 
-
-[shell]
-    program = "wsl"
