@@ -32,6 +32,9 @@ eval "$(zoxide init zsh)"
 # ---- Fuzzy Finder ----
 source <(fzf --zsh)
 
+# ---- Oh My Posh ----
+eval "$(oh-my-posh init zsh --config ~/jandedobbeleer.omp.json)"
+
 # history setup
 HISTFILE=$HOME/.zhistory
 SAVEHIST=1000
@@ -47,3 +50,4 @@ bindkey '^[[B' history-search-forward
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
 alias cd="z"
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
