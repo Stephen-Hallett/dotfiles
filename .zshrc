@@ -24,8 +24,6 @@ fi
 source ~/open_message.sh
 echo "\033[1;32m$message\033[0m"
 
-eval "$(oh-my-posh init zsh --config ~/jandedobbeleer.omp.json)"
-
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 
