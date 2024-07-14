@@ -14,7 +14,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	unset __conda_setup
 	# <<< conda initialize <<<
 
-	source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [[ $(grep -i Microsoft /proc/version) ]]; then
@@ -23,11 +22,7 @@ elif [[ $(grep -i Microsoft /proc/version) ]]; then
 	ZSH_THEME="powerlevel10k/powerlevel10k"
 	source $ZSH/oh-my-zsh.sh
 	if [[ ! $(grep "\[shell\]" ~/.config/alacritty/alacritty.toml) ]]; then	
-		echo "
-[shell]
-    program = \"wsl\"" >> .config/alacritty/alacritty.toml
 	fi
-	cp -r ~/.config/alacritty /mnt/c/users/stevo/AppData
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -39,8 +34,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(oh-my-posh init zsh --config ~/jandedobbeleer.omp.json)"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
