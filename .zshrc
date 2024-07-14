@@ -31,7 +31,8 @@ eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 # ---- Oh My Posh ----
-eval "$(oh-my-posh init zsh --config ~/jandedobbeleer.omp.json)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(oh-my-posh init zsh --config .omp_theme.toml)"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -47,5 +48,3 @@ bindkey '^[[B' history-search-forward
 
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
 alias cd="z"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
