@@ -36,3 +36,10 @@ size = 14
   family = "FantasqueSansM Nerd Font"
   style = "Regular"
 
+<<<<<<< HEAD
+=======
+
+[shell]
+    program = "C:\Windows\System32\wsl.exe"
+    args = ["--cd ~"]
+>>>>>>> 36db792 (Give up on alacritty on wsl for now + remove p10k)
