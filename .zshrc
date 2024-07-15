@@ -50,3 +50,6 @@ bindkey '^[[B' history-search-forward
 
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
 alias cd="z"
+c() {
+  z "$1" && eza -la --icons=always --color=always --long --no-filesize --no-time --no-user --group-directories-first --no-permissions
+}
