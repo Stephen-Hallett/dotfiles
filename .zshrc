@@ -18,13 +18,10 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-	# ---- Oh My Posh ----
-	eval "$(oh-my-posh init zsh --config .omp_theme.toml)"
 elif [[ $(grep -i Microsoft /proc/version) ]]; then
 	echo ""
 fi
 
-eval "$(oh-my-posh init zsh --config .omp_theme.toml)"
 # Print Opening message
 source ~/open_message.sh
 echo "\033[1;32m$message\033[0m"
