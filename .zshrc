@@ -1,3 +1,5 @@
+MODE="WORK"
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 if [[ "$(uname)" == "Darwin" ]]; then
@@ -23,10 +25,16 @@ elif [[ $(grep -i Microsoft /proc/version) ]]; then
 	source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
 fi
 
-# Print Opening message
-source ~/open_message.sh
-echo "\033[1;32m$message\033[0m"
 
+# Print Opening message
+if [ "$MODE" = "WORK" ]; then
+	source ~/work_message.sh
+	echo "\033[1;34m$message\033[0m"
+else
+	source ~/open_message.sh
+	echo "\033[1;32m$message\033[0m"
+
+fi
 # ---- Starship Prompt ----
 eval "$(starship init zsh)"
 
