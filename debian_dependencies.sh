@@ -9,3 +9,4 @@ sudo chmod 644 /etc/apt/keyrings/gierens.gpg /etc/apt/sources.list.d/gierens.lis
 sudo apt update
 sudo apt install -y eza
 
+curl -sS https://starship.rs/install.sh | sh

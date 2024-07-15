@@ -19,12 +19,16 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [[ $(grep -i Microsoft /proc/version) ]]; then
-	echo ""
+	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/highlighters
+	source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
 fi
 
 # Print Opening message
 source ~/open_message.sh
 echo "\033[1;32m$message\033[0m"
+
+# ---- Starship Prompt ----
+eval "$(starship init zsh)"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
