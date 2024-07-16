@@ -55,6 +55,7 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
+alias cat="bat"
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user"
 alias cd="z"
 c() {
