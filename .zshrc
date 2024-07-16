@@ -1,6 +1,4 @@
-MODE="WORK"
-
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+MODE="HOME"
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	# >>> conda initialize >>>
@@ -21,6 +19,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 elif [[ $(grep -i Microsoft /proc/version) ]]; then
+	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/highlighters
 	source /home/linuxbrew/.linuxbrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh	
 fi
