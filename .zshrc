@@ -1,4 +1,4 @@
-MODE="HOME"
+MODE=""
 
 if [[ "$(uname)" == "Darwin" ]]; then
 	# >>> conda initialize >>>
@@ -32,7 +32,6 @@ if [ "$MODE" = "WORK" ]; then
 else
 	source ~/open_message.sh
 	echo "\033[1;32m$message\033[0m"
-
 fi
 # ---- Starship Prompt ----
 eval "$(starship init zsh)"
