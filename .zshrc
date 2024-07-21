@@ -18,6 +18,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
 
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+	alias rstudio="open -a RStudio"
+
 elif [[ $(grep -i Microsoft /proc/version) ]]; then
 	eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 	export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/highlighters
