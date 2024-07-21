@@ -28,7 +28,7 @@ fi
 # Print Opening message
 if [ "$MODE" = "WORK" ]; then
 	source ~/work_message.sh
-	echo "\033[1;34m$message\033[0m"
+	echo "\033[1;32m$message\033[0m"
 else
 	source ~/open_message.sh
 	echo "\033[1;32m$message\033[0m"
