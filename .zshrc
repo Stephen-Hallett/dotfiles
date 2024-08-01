@@ -14,7 +14,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
 	    fi
 	fi
 	unset __conda_setup
-	# <<< conda initialize <<<
 
 	source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 	source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
