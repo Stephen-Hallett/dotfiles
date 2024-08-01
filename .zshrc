@@ -56,6 +56,7 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
+alias pip="pip3"
 alias python="python3"
 alias cat="bat"
 alias ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user --group-directories-first"
