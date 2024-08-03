@@ -55,6 +55,7 @@ setopt hist_verify
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
 
+alias upgrade="brew bundle install --file=~/.config/Brewfile"
 alias pip="pip3"
 alias python="python3"
 alias cat="bat"
