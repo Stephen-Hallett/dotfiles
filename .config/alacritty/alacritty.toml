@@ -1,9 +1,10 @@
 live_config_reload = true
 import = [
  	# "~/.config/alacritty/themes/themes/carbonfox.toml", 	
- 	 "~/.config/alacritty/themes/themes/onedark.toml", 
- 	# "~/.config/alacritty/themes/themes/iterm.toml", 
-  ]
+	#"~/.config/alacritty/themes/themes/onedark.toml", 
+	"~/.config/alacritty/themes/themes/catppuccin_macchiato.toml",
+	#"~/.config/alacritty/themes/themes/catppuccin_frappe.toml", 
+]
 
 [env]
 TERM = "xterm-256color"
