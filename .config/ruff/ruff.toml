@@ -110,6 +110,8 @@ ignore = [
     "COM812", # missing-trailing-comma
     "ISC001", # single-line-implicit-string-concatenation
     "ISC002", # multi-line-implicit-string-concatenation
+    "T201",   # print-statement-found
+    "N803",   # capital-letter-variable-names
 ]
 
 fixable = ["ALL"]
