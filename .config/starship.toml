@@ -57,7 +57,7 @@ disabled = false # Disabled by default
 style = "bg:sky fg:surface0"
 disabled = false # Disabled by default
 ssh_only = false
-format = '[ \($localipv4\)]($style)'
+format = '[ \($localipv4\)]($style)'
 
 
 [directory]
