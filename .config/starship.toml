@@ -22,6 +22,7 @@ $nodejs\
 $nim\
 $rust\
 $scala\
+$python\
 [](fg:sapphire bg:blue)\
 $docker_context\
 [ ](fg:blue)\
@@ -140,6 +141,11 @@ format = '[ $symbol ($version) ]($style)'
 
 [scala]
 symbol = " "
+style = "bg:sapphire"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
 style = "bg:sapphire"
 format = '[ $symbol ($version) ]($style)'
 
