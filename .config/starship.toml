@@ -30,6 +30,7 @@ $docker_context\
 
 right_format = """
 [](fg:sky)\
+$localip
 $time\
 [](sky)\
 """
@@ -51,6 +52,13 @@ disabled = false
 [os]
 style = "bg:sky fg:surface0"
 disabled = false # Disabled by default
+
+[localip]
+style = "bg:sky fg:surface0"
+disabled = false # Disabled by default
+ssh_only = false
+format = '[ \($localipv4\)]($style)'
+
 
 [directory]
 style = "bg:green fg:surface0"
