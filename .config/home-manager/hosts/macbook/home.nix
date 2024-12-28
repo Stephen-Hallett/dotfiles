@@ -15,8 +15,6 @@
     };
 
     packages = with pkgs; [
-      git
-      home-manager
       wget
       (python313.withPackages (ps: with ps; [ requests ]))
       font-awesome
