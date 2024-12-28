@@ -20,7 +20,6 @@
     packages = with pkgs; [
       git
       home-manager
-      python313
       (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
      ];
   };
