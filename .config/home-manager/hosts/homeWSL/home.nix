@@ -1,15 +1,15 @@
 {
   pkgs,
   lib,
-  macbook,
+  homePC,
   ...
 }:
 {
   imports = [ ./../shared/home.nix ];
 
   home = {
-    username = "${macbook.user}";
-    homeDirectory = "/Users/${macbook.user}";
+    username = "${homePC.user}";
+    homeDirectory = "/home/${homePC.user}";
 
     packages = with pkgs; [];
   };

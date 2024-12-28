@@ -53,6 +53,7 @@
 
       homePC = {
         user = "stevo";
+        hostname = "SWAGGERMUFFIN"; # My dad asked me for a hostname when I was 12
       };
 
       macbook = {

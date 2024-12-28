@@ -18,6 +18,4 @@
       protobuf
     ];
   };
-
-  fonts.fontconfig.enable = true;
 }
