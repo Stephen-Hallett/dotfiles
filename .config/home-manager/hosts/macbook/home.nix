@@ -16,7 +16,6 @@
 
     packages = with pkgs; [
       wget
-      (python313.withPackages (ps: with ps; [ requests ]))
       font-awesome
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];

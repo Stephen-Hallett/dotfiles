@@ -29,5 +29,11 @@
 
   core-packages = {
     ruff.enable = true;
+    fzf.enable = true;
+    bat.enable = true;
+    zsh.enable = true;
+    zoxide.enable = true;
+    starship.enable = true;
+    eza.enable = true;
   };
 }
