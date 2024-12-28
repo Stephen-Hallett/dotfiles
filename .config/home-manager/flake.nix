@@ -3,27 +3,98 @@
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { 
+    self, 
+    nixpkgs,
+    nixpkgs-unstable,
+    home-manager,
+    ... }@inputs:
     let
+      inherit (self) outputs;
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      homeConfigurations."stevo" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+      pkgs = import nixpkgs {
+        inherit system;
+      };
 
-        # Specify your home configuration modules here, for example,
-        # the path to your home.nix.
-        modules = [ ./home.nix ];
+      specialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        inherit inputs system personal;
+      };
 
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+      extraSpecialArgs = {
+        pkgs-unstable = import nixpkgs-unstable {
+          inherit system;
+          config.allowUnfree = true;
+        };
+        inherit inputs personal homePC macbook work;
+      };
+
+      personal = {
+        timeZone = "Pacific/Auckland";
+        defaultLocale = "en_NZ.UTF-8";
+        city = "Auckland";
+
+        # Used for gitconfig
+        gitUser = "Stephen-Hallett";
+        gitEmail = "stevohallett@gmail.com";
+      };
+
+      homePC = {
+        user = "stevo";
+      };
+
+      macbook = {
+        user = "stephen";
+        hostname = "Stephens-MacBook-Pro.local";
+      };
+
+      work = {
+        user = "stephen";
+      };
+    
+    in
+    {
+      homeConfigurations = {
+        # Macbook
+        "${macbook.user}@${macbook.hostname}" = 
+          let
+            system = "aarch64-darwin";
+          in
+          home-manager.lib.homeManagerConfiguration {
+            pkgs = import nixpkgs {
+              inherit system;
+            };
+
+            extraSpecialArgs = {
+              pkgs-unstable = import nixpkgs-unstable {
+                inherit system;
+                config.allowUnfree = true;
+              };
+              inherit inputs personal macbook;
+            };
+
+          modules = [
+            ./hosts/macbook/home.nix
+            ./modules
+          ];
+        };
       };
     };
 }
+
+
+
+
+
