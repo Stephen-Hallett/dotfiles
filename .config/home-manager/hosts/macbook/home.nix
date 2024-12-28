@@ -17,7 +17,6 @@
     packages = with pkgs; [
       wget
       font-awesome
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
     ];
   };
 
