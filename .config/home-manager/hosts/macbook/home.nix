@@ -5,7 +5,7 @@
   ...
 }:
 {
-  imports = [ ./../common/home.nix ];
+  imports = [ ./../shared/home.nix ];
 
   home = {
     username = "${macbook.user}";
@@ -14,10 +14,7 @@
     file = {
     };
 
-    packages = with pkgs; [
-      wget
-      font-awesome
-    ];
+    packages = with pkgs; [];
   };
 
   fonts.fontconfig.enable = true;

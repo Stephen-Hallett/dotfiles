@@ -20,7 +20,8 @@
     packages = with pkgs; [
       git
       home-manager
-      (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      fantasque-sans-mono
+      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
      ];
   };
 
