@@ -68,6 +68,15 @@
     in
     {
       homeConfigurations = {
+        # HomePC
+        "${homePC.user}@${homePC.hostname}" = home-manager.lib.homeManagerConfiguration {
+          inherit extraSpecialArgs pkgs;
+          modules = [
+            ./hosts/homeWSL/home.nix
+            ./modules
+          ];
+        };
+
         # Macbook
         "${macbook.user}@${macbook.hostname}" = 
           let
