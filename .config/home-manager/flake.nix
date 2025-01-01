@@ -52,7 +52,7 @@
       };
 
       homePC = {
-        user = "stevo";
+        user = "stephen";
         hostname = "SWAGGERMUFFIN"; # My dad asked me for a hostname when I was 12
       };
 

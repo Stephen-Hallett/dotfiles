@@ -21,7 +21,7 @@
           flakeDir = "~/dotfiles/.config/home-manager";
         in
         {
-          hms = "home-manager switch && exec zsh";
+          hms = "home-manager switch --flake ${flakeDir} && exec zsh";
 
           ".." = "z ..";
           cat = "bat";
