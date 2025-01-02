@@ -7,5 +7,6 @@
     ./starship/starship.nix
     ./nixvim/nixvim.nix
     ./eza.nix
+    ./ripgrep.nix
   ];
 }

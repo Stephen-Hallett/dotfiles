@@ -37,5 +37,6 @@
     nixvim.enable = true;
     eza.enable = true;
     git.enable = true;
+    ripgrep.enable = true;
   };
 }
