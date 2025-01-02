@@ -34,6 +34,7 @@
     zsh.enable = true;
     zoxide.enable = true;
     starship.enable = true;
+    nixvim.enable = true;
     eza.enable = true;
     git.enable = true;
   };

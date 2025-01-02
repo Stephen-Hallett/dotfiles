@@ -5,6 +5,7 @@
     ./bat.nix
     ./zsh.nix
     ./starship/starship.nix
+    ./nixvim/nixvim.nix
     ./eza.nix
   ];
 }

@@ -10,6 +10,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
   };
 
   outputs = { 
@@ -74,6 +79,7 @@
           modules = [
             ./hosts/homeWSL/home.nix
             ./modules
+            inputs.nixvim.homeManagerModules.nixvim
           ];
         };
 
@@ -98,6 +104,7 @@
           modules = [
             ./hosts/macbook/home.nix
             ./modules
+            inputs.nixvim.homeManagerModules.nixvim
           ];
         };
       };
