@@ -15,7 +15,7 @@
         ];
 
       fonts.packages = [
-        (pkgs.nerd-fonts.fantasque-sans-mono)
+        pkgs.fantasque-sans-mono
       ];
 
       homebrew = {
