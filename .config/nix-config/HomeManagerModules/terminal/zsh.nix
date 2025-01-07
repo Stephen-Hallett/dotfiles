@@ -22,7 +22,7 @@
         in
         {
           hms = "home-manager switch --flake ${flakeDir} && exec zsh";
-          drs = "darwin-rebuild switch --flake ~/dotfiles/.config/nix-config#macbook";
+          drs = "darwin-rebuild switch --flake ${flakedir}#macbook && exec zsh";
 
           ".." = "z ..";
           cat = "bat";
