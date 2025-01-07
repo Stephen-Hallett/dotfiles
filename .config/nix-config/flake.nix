@@ -1,9 +1,9 @@
 {
-  description = "Home Manager configuration of stevo";
+  description = "Nix configuration";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -15,6 +15,10 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
+    # Nix darwin
+    nix-darwin.url = "github:LnL7/nix-darwin";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs = { 
@@ -22,6 +26,8 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
+    nix-darwin,
+    nix-homebrew,
     ... }@inputs:
     let
       inherit (self) outputs;
@@ -78,7 +84,7 @@
           inherit extraSpecialArgs pkgs;
           modules = [
             ./hosts/homeWSL/home.nix
-            ./modules
+            ./HomeManagerModules
             inputs.nixvim.homeManagerModules.nixvim
           ];
         };
@@ -103,8 +109,19 @@
 
           modules = [
             ./hosts/macbook/home.nix
-            ./modules
+            ./HomeManagerModules
             inputs.nixvim.homeManagerModules.nixvim
+          ];
+        };
+      };
+
+      darwinConfigurations = {
+        "macbook" = nix-darwin.lib.darwinSystem {
+          modules = [ 
+            ./nix-darwin/configuration.nix
+            ./nix-darwin/modules/system.nix
+            ./nix-darwin/modules/homebrew.nix
+            nix-homebrew.darwinModules.nix-homebrew
           ];
         };
       };

@@ -21,7 +21,7 @@
       git
       home-manager
       fantasque-sans-mono
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      (nerd-fonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
      ];
   };
 
