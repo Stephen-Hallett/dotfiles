@@ -76,14 +76,16 @@
         user = "stephen";
       };
 
-      coreConfig = {
+      coreConfig = username: {
         inherit extraSpecialArgs pkgs;
         modules = [
           ./hosts/core/home.nix
           ./HomeManagerModules
           inputs.nixvim.homeManagerModules.nixvim
         ];
+        home.username = username; # Set the username dynamically
       };
+
 
     
     in
@@ -125,9 +127,9 @@
         };
 
         # Other users
-        "stephen" = home-manager.lib.homeManagerConfiguration coreConfig;
-        "root" = home-manager.lib.homeManagerConfiguration coreConfig;
-        "pi" = home-manager.lib.homeManagerConfiguration coreConfig;
+        "stephen" = home-manager.lib.homeManagerConfiguration (coreConfig "stephen");
+        "root" = home-manager.lib.homeManagerConfiguration (coreConfig "root");
+        "pi" = home-manager.lib.homeManagerConfiguration (coreConfig "pi");
       };
 
       darwinConfigurations = {
