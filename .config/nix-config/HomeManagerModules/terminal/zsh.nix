@@ -21,7 +21,7 @@
           flakeDir = "~/dotfiles/.config/nix-config";
         in
         {
-          hms = "home-manager switch --flake ${flakeDir} && exec zsh";
+          hms = "home-manager switch --impure --flake ${flakeDir} && exec zsh";
           drs = "darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
 
           ".." = "z ..";

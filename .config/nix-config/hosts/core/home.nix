@@ -16,8 +16,8 @@
 
   home = {
     stateVersion = "24.11";
-    username = lib.mkDefault "root";
-    homeDirectory = lib.mkDefault "/root";
+    username = builtins.getEnv "USER";
+    homeDirectory = builtins.getEnv "HOME";
 
     packages = with pkgs; [
       git

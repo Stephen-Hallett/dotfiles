@@ -31,22 +31,16 @@
     ... }@inputs:
     let
       inherit (self) outputs;
-      system = "x86_64-linux";
-      pkgs = import nixpkgs {
-        inherit system;
-      };
 
       specialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs system personal;
+        inherit inputs personal;
       };
 
       extraSpecialArgs = {
         pkgs-unstable = import nixpkgs-unstable {
-          inherit system;
           config.allowUnfree = true;
         };
         inherit inputs personal homePC macbook work default;
@@ -80,75 +74,28 @@
         user = builtins.getEnv "USER";
       };
 
-      coreConfig = username: {
-        inherit extraSpecialArgs pkgs;
+      mkHomeConfig = machineModule: system: home-manager.lib.homeManagerConfiguration {
+        inherit extraSpecialArgs;
+        pkgs = import nixpkgs {
+          inherit system;
+        };
+
         modules = [
-          ./hosts/core/home.nix
           ./HomeManagerModules
           inputs.nixvim.homeManagerModules.nixvim
+          machineModule
         ];
-        user = username; # Set the username dynamically
       };
-
-
-    
     in
     {
       homeConfigurations = {
         # HomePC
-        "${homePC.user}@${homePC.hostname}" = home-manager.lib.homeManagerConfiguration {
-          inherit extraSpecialArgs pkgs;
-          modules = [
-            ./hosts/homeWSL/home.nix
-            ./HomeManagerModules
-            inputs.nixvim.homeManagerModules.nixvim
-          ];
-        };
-
+        "${homePC.user}@${homePC.hostname}" = mkHomeConfig ./hosts/homeWSL/home.nix "x86_64-linux";
         # Macbook
-        "${macbook.user}@${macbook.hostname}" = 
-          let
-            system = "aarch64-darwin";
-          in
-          home-manager.lib.homeManagerConfiguration {
-            pkgs = import nixpkgs {
-              inherit system;
-            };
-
-            extraSpecialArgs = {
-              pkgs-unstable = import nixpkgs-unstable {
-                inherit system;
-                config.allowUnfree = true;
-              };
-              inherit inputs personal macbook;
-            };
-
-          modules = [
-            ./hosts/macbook/home.nix
-            ./HomeManagerModules
-            inputs.nixvim.homeManagerModules.nixvim
-          ];
-        };
-
-        # Other users
-        "root" = home-manager.lib.homeManagerConfiguration {
-          inherit extraSpecialArgs pkgs;
-          modules = [
-            ./hosts/core/home.nix
-            ./HomeManagerModules
-            inputs.nixvim.homeManagerModules.nixvim
-          ];
-        };
-
-        "${default.user}" = home-manager.lib.homeManagerConfiguration {
-          inherit extraSpecialArgs pkgs;
-          modules = [
-            ./hosts/core/home.nix
-            ./hosts/default/home.nix
-            ./HomeManagerModules
-            inputs.nixvim.homeManagerModules.nixvim
-          ];
-        };
+        "${macbook.user}@${macbook.hostname}" = mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
+        # Arm machines
+        "${default.user}@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
+        "${default.user}@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
       };
 
       darwinConfigurations = {
@@ -163,8 +110,4 @@
       };
     };
 }
-
-
-
-
 
