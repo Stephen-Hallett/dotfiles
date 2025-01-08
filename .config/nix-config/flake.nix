@@ -49,7 +49,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs personal homePC macbook work;
+        inherit inputs personal homePC macbook work fallback;
       };
 
       personal = {
@@ -76,6 +76,10 @@
         user = "stephen";
       };
 
+      default = {
+        user = builtins.getEnv "USER";
+      };
+
       coreConfig = username: {
         inherit extraSpecialArgs pkgs;
         modules = [
@@ -83,7 +87,7 @@
           ./HomeManagerModules
           inputs.nixvim.homeManagerModules.nixvim
         ];
-        home.username = username; # Set the username dynamically
+        user = username; # Set the username dynamically
       };
 
 
@@ -127,9 +131,24 @@
         };
 
         # Other users
-        "stephen" = home-manager.lib.homeManagerConfiguration (coreConfig "stephen");
-        "root" = home-manager.lib.homeManagerConfiguration (coreConfig "root");
-        "pi" = home-manager.lib.homeManagerConfiguration (coreConfig "pi");
+        "root" = home-manager.lib.homeManagerConfiguration {
+          inherit extraSpecialArgs pkgs;
+          modules = [
+            ./hosts/core/home.nix
+            ./HomeManagerModules
+            inputs.nixvim.homeManagerModules.nixvim
+          ];
+        };
+        
+        "${fallback.user}" = home-manager.lib.homeManagerConfiguration {
+          inherit extraSpecialArgs pkgs;
+          modules = [
+            ./hosts/core/home.nix
+            ./hosts/default/home.nix
+            ./HomeManagerModules
+            inputs.nixvim.homeManagerModules.nixvim
+          ];
+        };
       };
 
       darwinConfigurations = {

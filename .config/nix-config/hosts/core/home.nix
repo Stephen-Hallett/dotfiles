@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   nix = {
     package = pkgs.nix;
@@ -16,6 +16,8 @@
 
   home = {
     stateVersion = "24.11";
+    username = lib.mkDefault "root";
+    homeDirectory = lib.mkDefault "/root";
 
     packages = with pkgs; [
       git
