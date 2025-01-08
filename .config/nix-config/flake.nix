@@ -94,8 +94,8 @@
         # Macbook
         "${macbook.user}@${macbook.hostname}" = mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
         # Arm machines
-        "${default.user}@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
-        "${default.user}@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
+        "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
+        "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
       };
 
       darwinConfigurations = {
