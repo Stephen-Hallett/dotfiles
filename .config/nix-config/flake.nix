@@ -139,8 +139,8 @@
             inputs.nixvim.homeManagerModules.nixvim
           ];
         };
-        
-        "${fallback.user}" = home-manager.lib.homeManagerConfiguration {
+
+        "${default.user}" = home-manager.lib.homeManagerConfiguration {
           inherit extraSpecialArgs pkgs;
           modules = [
             ./hosts/core/home.nix
