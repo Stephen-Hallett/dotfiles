@@ -75,6 +75,16 @@
       work = {
         user = "stephen";
       };
+
+      coreConfig = {
+        inherit extraSpecialArgs pkgs;
+        modules = [
+          ./hosts/core/home.nix
+          ./HomeManagerModules
+          inputs.nixvim.homeManagerModules.nixvim
+        ];
+      };
+
     
     in
     {
@@ -113,6 +123,11 @@
             inputs.nixvim.homeManagerModules.nixvim
           ];
         };
+
+        # Other users
+        "stephen" = home-manager.lib.homeManagerConfiguration coreConfig;
+        "root" = home-manager.lib.homeManagerConfiguration coreConfig;
+        "pi" = home-manager.lib.homeManagerConfiguration coreConfig;
       };
 
       darwinConfigurations = {
