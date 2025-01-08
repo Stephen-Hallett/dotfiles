@@ -49,7 +49,7 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit inputs personal homePC macbook work fallback;
+        inherit inputs personal homePC macbook work default;
       };
 
       personal = {
