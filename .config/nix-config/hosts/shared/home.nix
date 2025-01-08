@@ -16,6 +16,19 @@
       terraform
       sqlite
       protobuf
+      coreutils
+      gcc
+      gcc-unwrapped
+      glibc
+      stdenv.cc.cc.lib
+      gnumake
+      cmake
+      zlib
+      pipx
     ];
+
+    sessionVariables = {
+      #LD_LIBRARY_PATH="${pkgs.stdenv.cc.cc.lib}/lib/"; # fix the problem of dynamic link in python package
+    };
   };
 }

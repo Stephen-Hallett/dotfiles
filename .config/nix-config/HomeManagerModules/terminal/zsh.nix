@@ -132,6 +132,11 @@
             clipcopy $1
         }
 
+        #Function to activate virtual environments
+        activate() {
+          source "$1"/bin/activate
+        }
+
         zle-line-init() {
           emulate -L zsh
 
