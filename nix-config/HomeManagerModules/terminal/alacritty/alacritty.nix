@@ -20,6 +20,7 @@
           dynamic_padding = false;
           opacity = 0.97;
           option_as_alt = "Both";
+          decorations = "Transparent";
 
           padding = {
             x = 5;
