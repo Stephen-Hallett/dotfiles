@@ -2,20 +2,19 @@
       # Set Git commit hash for darwin-version.
       system.configurationRevision = null;
       nixpkgs.config.allowUnfree = true;
-      environment.systemPackages =
+      environment.systemPackages = with pkgs;
         [ 
-          pkgs.vim
-          pkgs.alacritty
-          pkgs.mkalias
-          pkgs.discord
-          pkgs.vscode
-          pkgs.spotify
-          pkgs.R
-          pkgs.python312
+          vim
+          mkalias
+          R
+          python312
+          alacritty
         ];
 
-      fonts.packages = [
-        pkgs.fantasque-sans-mono
+      fonts.packages = with pkgs;
+      [
+        (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+        fantasque-sans-mono
       ];
 
       homebrew = {
@@ -31,6 +30,9 @@
           "vlc"
           "rstudio"
           "zoom"
+          "spotify"
+          "discord"
+          "visual-studio-code"
           # ----- Personal -----
           "ultimaker-cura"
           "jagex"
@@ -41,8 +43,8 @@
           "Notability" = 360593530;
           "Xcode" = 497799835;
         };
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
+        onActivation.autoUpdate = false;
+        onActivation.upgrade = false;
         onActivation.cleanup = "zap";
       };
 

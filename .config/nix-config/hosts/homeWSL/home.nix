@@ -8,6 +8,8 @@
   imports = [ ./../shared/home.nix ];
 
   home = {
-    packages = with pkgs; [];
+    packages = with pkgs; [
+      glibc
+    ];
   };
 }

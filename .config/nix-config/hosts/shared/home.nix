@@ -19,7 +19,6 @@
       coreutils
       gcc
       gcc-unwrapped
-      glibc
       stdenv.cc.cc.lib
       gnumake
       cmake
