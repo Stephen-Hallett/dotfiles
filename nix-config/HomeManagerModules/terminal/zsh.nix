@@ -18,7 +18,7 @@
 
       shellAliases =
         let
-          flakeDir = "~/dotfiles/.config/nix-config";
+          flakeDir = "~/dotfiles/nix-config";
         in
         {
           hms = "home-manager switch --impure --flake ${flakeDir} && exec zsh";
