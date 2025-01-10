@@ -102,8 +102,7 @@
         "macbook" = nix-darwin.lib.darwinSystem {
           modules = [ 
             ./nix-darwin/configuration.nix
-            ./nix-darwin/modules/system.nix
-            ./nix-darwin/modules/homebrew.nix
+            ./nix-darwin/modules/modules.nix
             nix-homebrew.darwinModules.nix-homebrew
           ];
         };
