@@ -24,9 +24,8 @@
 
           padding = {
             x = 5;
-            y = 5;
+            y = 13;
           };
-          title = "The Mainframe";
         };
         font = {
           size = 14;
