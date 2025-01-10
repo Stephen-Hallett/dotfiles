@@ -13,4 +13,8 @@
 
     packages = with pkgs; [];
   };
+
+  mac-packages = {
+    alacritty.enable = true;
+  };
 }

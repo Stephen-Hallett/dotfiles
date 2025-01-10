@@ -8,7 +8,6 @@
           mkalias
           R
           python312
-          alacritty
         ];
 
       fonts.packages = with pkgs;

@@ -8,5 +8,6 @@
     ./nixvim/nixvim.nix
     ./eza.nix
     ./ripgrep.nix
+    ./alacritty/alacritty.nix
   ];
 }
