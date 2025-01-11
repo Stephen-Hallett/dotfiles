@@ -32,6 +32,7 @@
     masApps = {
       "Notability" = 360593530;
       "Xcode" = 497799835;
+      "Dropover" = 1355679052;
     };
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;

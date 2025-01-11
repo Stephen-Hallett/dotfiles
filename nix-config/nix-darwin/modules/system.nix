@@ -14,6 +14,7 @@
           "/Applications/Visual Studio Code.app"
           "/Applications/Discord.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
+          "/Applications/Notability.app"
           "/System/Applications/App Store.app"
           "/System/Applications/System Settings.app"
         ];
