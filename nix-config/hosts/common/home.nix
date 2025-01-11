@@ -12,7 +12,6 @@
     packages = with pkgs; [
       wget
       font-awesome
-      portaudio
       azure-cli
       azure-functions-core-tools
       terraform
@@ -26,6 +25,7 @@
       cmake
       zlib
       pipx
+      devcontainer
     ];
 
     sessionVariables = {
