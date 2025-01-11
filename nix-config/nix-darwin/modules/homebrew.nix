@@ -33,8 +33,8 @@
       "Notability" = 360593530;
       "Xcode" = 497799835;
     };
-    onActivation.autoUpdate = false;
-    onActivation.upgrade = false;
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
     onActivation.cleanup = "zap";
   };
 }
