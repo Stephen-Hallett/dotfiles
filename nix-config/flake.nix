@@ -93,6 +93,8 @@
         "${homePC.user}@${homePC.hostname}" = mkHomeConfig ./hosts/homeWSL/home.nix "x86_64-linux";
         # Macbook
         "${macbook.user}@${macbook.hostname}" = mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
+        # Work WSL
+        "${work.user}" = mkHomeConfig ./hosts/work/home.nix "x86_64-linux";
         # Arm machines
         "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
         "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";

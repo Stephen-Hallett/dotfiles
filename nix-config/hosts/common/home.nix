@@ -1,3 +1,5 @@
+# Config for packages shared by all development machines (non VM/edge devices)
+
 {
   pkgs,
   lib,

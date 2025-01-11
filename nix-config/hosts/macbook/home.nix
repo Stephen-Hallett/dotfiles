@@ -1,16 +1,13 @@
+# Specific config for my macbook, inherits personal (and subsequently common & core) packages
+
 {
   pkgs,
-  lib,
-  macbook,
   ...
 }:
 {
-  imports = [ ./../shared/home.nix ];
+  imports = [ ./../personal/home.nix ];
 
   home = {
-    username = "${macbook.user}";
-    homeDirectory = "/Users/${macbook.user}";
-
     packages = with pkgs; [];
   };
 

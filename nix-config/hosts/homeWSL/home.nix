@@ -1,11 +1,13 @@
+# Specific config for my home wsl, inherits personal (and subsequently common & core) packages
+
 {
   pkgs,
-  lib,
-  homePC,
   ...
 }:
 {
-  imports = [ ./../shared/home.nix ];
+  imports = [ 
+    ./../personal/home.nix 
+  ];
 
   home = {
     packages = with pkgs; [
