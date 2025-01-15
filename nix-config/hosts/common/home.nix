@@ -2,11 +2,14 @@
 
 {
   pkgs,
-  lib,
   ...
 }:
 {
   imports = [ ./../core/home.nix ];
+
+  common-packages = {
+    tmux.enable = true;
+  };
 
   home = {
     packages = with pkgs; [

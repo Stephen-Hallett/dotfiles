@@ -9,5 +9,6 @@
     ./eza.nix
     ./ripgrep.nix
     ./alacritty/alacritty.nix
+    ./tmux.nix
   ];
 }
