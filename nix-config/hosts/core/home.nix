@@ -26,10 +26,6 @@
       home-manager
       fantasque-sans-mono
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-      (python312.withPackages(ps: with ps; [ 
-        numpy
-        requests
-        ]))
      ];
   };
 
