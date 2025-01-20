@@ -21,7 +21,7 @@
           flakeDir = "~/dotfiles/nix-config";
         in
         {
-          hms = "home-manager switch --impure --flake ${flakeDir} && exec zsh";
+          hms = "home-manager switch --impure --flake ${flakeDir} && source ~/dotfiles/Brewfile.sh && exec zsh";
           drs = "darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
 
           ".." = "z ..";
@@ -51,7 +51,15 @@
         source ~/dotfiles/open_message.sh
         echo "\033[1;32m$message\033[0m"
 
-
+        # Add linuxbrew to path
+        if [[ "$HOST" == "SWAGGERMUFFIN" || "$HOST" == "HOSTNAME2" ]]; then
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          export HOMEBREW_GIT_PATH=${pkgs.git}/bin/git
+          export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dotfiles/Brewfile"
+          # brew bundle --global --file="$HOMEBREW_BUNDLE_FILE_GLOBAL"
+          # brew bundle cleanup --zap --force --quiet
+        fi
+        
         unsetopt beep
 
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

@@ -26,6 +26,7 @@
       zlib
       pipx
       devcontainer
+      virtualenv
     ];
 
     sessionVariables = {
