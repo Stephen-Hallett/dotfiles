@@ -24,9 +24,6 @@
       gnumake
       cmake
       zlib
-      pipx
-      devcontainer
-      virtualenv
     ];
 
     sessionVariables = {
