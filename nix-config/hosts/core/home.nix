@@ -25,6 +25,8 @@
       git
       home-manager
       fantasque-sans-mono
+      wget
+      curl
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
      ];
   };

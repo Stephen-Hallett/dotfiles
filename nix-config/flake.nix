@@ -98,6 +98,7 @@
         # Arm machines
         "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
         "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
+        "stephen@media" = mkHomeConfig ./hosts/vm/home.nix "aarch64-linux";
       };
 
       darwinConfigurations = {
