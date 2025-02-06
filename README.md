@@ -12,5 +12,6 @@ git clone git@github.com:Stephen-Hallett/dotfiles.git # or https://github.com/St
 
 home-manager switch --impure --flake ~/dotfiles/nix-config && exec zsh
 exit
-hms # This is an alias for home-manager switch which should exist after running the previous two lines
+exec zsh
+hms # Alias for home-manager switch which should exist after applying config
 ```
