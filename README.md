@@ -12,6 +12,6 @@ git clone git@github.com:Stephen-Hallett/dotfiles.git # or https://github.com/St
 
 home-manager switch --impure --flake ~/dotfiles/nix-config && exec zsh
 exit
-exec zsh
+which zsh | sudo tee -a /etc/shells && chsh -s $(which zsh) && exec zsh # Set zsh as default shell
 hms # Alias for home-manager switch which should exist after applying config
 ```
