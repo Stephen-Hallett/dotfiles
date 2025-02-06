@@ -13,6 +13,9 @@
     packages = with pkgs; [
       docker
       docker-compose
+      nfs-utils
+      usbutils
+      pciutils
     ];
   };
 }
