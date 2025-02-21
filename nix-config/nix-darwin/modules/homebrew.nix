@@ -11,6 +11,9 @@
     enable = true;
     brews = [
       "mas"
+      "python@3.11"
+      "python@3.12"
+      "python@3.13"
     ];
     casks = [
       # ----- General -----
@@ -33,6 +36,7 @@
       "Notability" = 360593530;
       "Xcode" = 497799835;
       "Dropover" = 1355679052;
+      "Infuse" = 1136220934;
     };
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;

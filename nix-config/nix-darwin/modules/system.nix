@@ -15,6 +15,7 @@
           "/Applications/Discord.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
           "/Applications/Postman.app"
+          "/Applications/Infuse.app"
           "/Applications/Notability.app"
           "/System/Applications/App Store.app"
           "/System/Applications/System Settings.app"
