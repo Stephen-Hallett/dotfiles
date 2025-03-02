@@ -27,16 +27,7 @@
       gnumake
       cmake
       zlib
-      nfs-utils
-      cifs-utils
-      usbutils
-      pciutils
       nettools
-      # Docker
-      docker
-      docker-compose
-      containerd
-      docker-buildx
     ];
 
     sessionVariables = {

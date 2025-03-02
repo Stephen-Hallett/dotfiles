@@ -7,11 +7,11 @@
 {
   imports = [ 
     ./../personal/home.nix 
+    ./../linux/home.nix
   ];
 
   home = {
     packages = with pkgs; [
-      glibc
     ];
   };
 }

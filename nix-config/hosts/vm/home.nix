@@ -7,15 +7,11 @@
 {
   imports = [ 
     ./../core/home.nix 
+    ./../linux/home.nix
   ];
 
   home = {
     packages = with pkgs; [
-      docker
-      docker-compose
-      nfs-utils
-      usbutils
-      pciutils
     ];
   };
 }
