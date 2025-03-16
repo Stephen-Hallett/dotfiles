@@ -5,7 +5,6 @@
           vim
           mkalias
           R
-          python312
         ];
 
       fonts.packages = with pkgs;
