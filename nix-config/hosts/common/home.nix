@@ -28,6 +28,7 @@
       cmake
       zlib
       nettools
+      uv
     ];
 
     sessionVariables = {
