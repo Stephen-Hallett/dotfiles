@@ -27,6 +27,8 @@
       gnumake
       cmake
       zlib
+      uv
+      # Utils
       nfs-utils
       cifs-utils
       usbutils
