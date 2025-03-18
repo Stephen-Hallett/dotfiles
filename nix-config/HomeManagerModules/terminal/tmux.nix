@@ -67,8 +67,7 @@
         bind % split-window -h -c "#{pane_current_path}"
 
         set -g allow-passthrough on
-        set -gu default-command
-        set -g default-shell /bin/zsh
+        set -g default-command "$SHELL"
       '';
     };
   };
