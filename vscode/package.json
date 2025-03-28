@@ -1,0 +1,58 @@
+{
+  "name": "vscode",
+  "displayName": "VSCode config",
+  "description": "VSCode extension pack & default settings",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "version": "1.0.0",
+  "main": "./out/extension.js",
+  "categories": [
+    "Extension Packs"
+  ],
+  "extensionPack": [
+    "charliermarch.ruff",
+    "esbenp.prettier-vscode",
+    "catppuccin.catppuccin-vsc",
+    "catppuccin.catppuccin-vsc-icons",
+    "github.vscode-github-actions",
+    "hashicorp.terraform",
+    "jnoortheen.nix-ide",
+    "ms-azuretools.vscode-azurefunctions",
+    "ms-azuretools.vscode-azureresourcegroups",
+    "ms-azuretools.vscode-azurestorage",
+    "ms-azuretools.vscode-docker",
+    "ms-toolsai.jupyter",
+    "ms-toolsai.jupyter-keymap",
+    "ms-toolsai.jupyter-renderers",
+    "ms-toolsai.vscode-jupyter-cell-tags",
+    "ms-toolsai.vscode-jupyter-slideshow",
+    "ms-vscode-remote.remote-wsl",
+    "ms-vscode.azure-account",
+    "ms-vscode.cmake-tools",
+    "vscodevim.vim",
+    "redhat.vscode-yaml",
+    "njpwerner.autodocstring"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/vscode": "^1.95.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "undici-types": "^6.20.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stephen-Hallett/dotfiles.git"
+  }
+}
