@@ -29,6 +29,8 @@
       zlib
       nettools
       uv
+      typescript
+      just
     ];
 
     sessionVariables = {
