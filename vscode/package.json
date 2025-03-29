@@ -35,7 +35,8 @@
     "ms-vscode.cmake-tools",
     "vscodevim.vim",
     "redhat.vscode-yaml",
-    "njpwerner.autodocstring"
+    "njpwerner.autodocstring",
+    "skellock.just"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
