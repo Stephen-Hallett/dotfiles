@@ -1,6 +1,7 @@
 # Dotfiles config with Home-manager, Nix-Darwin & Homebrew
 
 ### To install (on Debian)
+
 ```sh
 sudo apt-get install curl
 sh <(curl -L https://nixos.org/nix/install) --daemon
@@ -14,4 +15,12 @@ home-manager switch --impure --flake ~/dotfiles/nix-config && exec zsh
 exit
 which zsh | sudo tee -a /etc/shells && chsh -s $(which zsh) && exec zsh # Set zsh as default shell
 hms # Alias for home-manager switch which should exist after applying config
+```
+
+### Install with Just
+
+First ensure you have installed curl & just, then run the following.
+
+```sh
+just -f <(curl -sL https://raw.githubusercontent.com/stephen-hallett/dotfiles/main/justfile)
 ```
