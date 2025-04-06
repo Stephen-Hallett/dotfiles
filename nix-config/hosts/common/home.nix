@@ -31,6 +31,8 @@
       uv
       typescript
       just
+      nodejs_22
+      nodemon
     ];
 
     sessionVariables = {
