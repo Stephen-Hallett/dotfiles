@@ -33,6 +33,7 @@
       just
       nodejs_22
       nodemon
+      yarn
     ];
 
     sessionVariables = {
