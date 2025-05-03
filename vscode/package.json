@@ -14,7 +14,7 @@
     "Extension Packs"
   ],
   "extensionPack": [
-    "charliermarch.ruff",
+    "charliermarsh.ruff",
     "esbenp.prettier-vscode",
     "catppuccin.catppuccin-vsc",
     "catppuccin.catppuccin-vsc-icons",
