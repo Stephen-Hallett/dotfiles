@@ -63,7 +63,7 @@
 
       macbook = {
         user = "stephen";
-        hostname = "MacBookPro";
+        hostname = "Stephens-MacBook-Pro.local";
       };
 
       work = {

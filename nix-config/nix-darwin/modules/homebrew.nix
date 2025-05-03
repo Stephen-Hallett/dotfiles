@@ -30,6 +30,7 @@
       # ----- Personal -----
       "ultimaker-cura"
       "jagex"
+      "runelite"
       "autodesk-fusion"
       "arduino-ide"
     ];
