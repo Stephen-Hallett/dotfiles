@@ -190,6 +190,7 @@ export function activate(context: vscode.ExtensionContext) {
     "~/.config/ruff/ruff.toml",
     vscode.ConfigurationTarget.Global
   );
+  config.update("ruff.nativeServe", "on", vscode.ConfigurationTarget.Global);
   config.update(
     "diffEditor.ignoreTrimWhitespace",
     false,
