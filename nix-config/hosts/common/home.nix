@@ -34,6 +34,7 @@
       nodejs_22
       nodemon
       yarn
+      vsce
     ];
 
     sessionVariables = {
