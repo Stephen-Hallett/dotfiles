@@ -16,11 +16,15 @@
           TERM = "xterm-256color";
         };
 
+        selection = {
+          save_to_clipboard = true;
+        };
+
         window = {
           dynamic_padding = false;
           opacity = 0.97;
           option_as_alt = "Both";
-          decorations = "Transparent";
+          decorations = "transparent";
 
           padding = {
             x = 5;

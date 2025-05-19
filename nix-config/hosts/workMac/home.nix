@@ -20,6 +20,4 @@
   mac-packages = {
     alacritty.enable = true;
   };
-
-  
 }

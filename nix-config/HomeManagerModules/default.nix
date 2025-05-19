@@ -2,5 +2,6 @@
   imports = [
     ./coding
     ./terminal
+    ./desktop
   ];
 }
