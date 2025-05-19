@@ -14,9 +14,6 @@ function activate(context) {
         },
         "editor.defaultFormatter": "charliermarsh.ruff",
     }, vscode.ConfigurationTarget.Global);
-    config.update("[nix]", {
-        "editor.defaultFormatter": "jnoortheen.nix-ide",
-    }, vscode.ConfigurationTarget.Global);
     config.update("[terraform]", {
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "hashicorp.terraform",
@@ -81,7 +78,7 @@ function activate(context) {
     config.update("notebook.formatOnSave.enabled", true, vscode.ConfigurationTarget.Global);
     config.update("notebook.defaultFormatter", "charliermarsh.ruff", vscode.ConfigurationTarget.Global);
     config.update("ruff.configuration", "~/.config/ruff/ruff.toml", vscode.ConfigurationTarget.Global);
-    config.update("ruff.nativeServe", "on", vscode.ConfigurationTarget.Global);
+    config.update("ruff.nativeServer", "on", vscode.ConfigurationTarget.Global);
     config.update("diffEditor.ignoreTrimWhitespace", false, vscode.ConfigurationTarget.Global);
     config.update("editor.formatOnPaste", true, vscode.ConfigurationTarget.Global);
     config.update("editor.formatOnSave", true, vscode.ConfigurationTarget.Global);
