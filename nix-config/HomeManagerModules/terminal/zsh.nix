@@ -23,6 +23,7 @@
         {
           hms = "home-manager switch --impure --flake ${flakeDir} && source ~/dotfiles/Brewfile.sh && exec zsh";
           drs = "darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
+          drs-work = "darwin-rebuild switch --flake ${flakeDir}#work && exec zsh";
 
           ".." = "z ..";
           cat = "bat";
