@@ -19,7 +19,7 @@
     casks = [
       # ----- General -----
       "postman"
-      "docker"
+      "orbstack"
       "vlc"
       "rstudio"
       "visual-studio-code"
