@@ -18,6 +18,7 @@
       "visual-studio-code"
       "git-credential-manager"
       "firefox"
+      "raycast"
     ];
     masApps = {
       # "Notability" = 360593530;

@@ -1,6 +1,6 @@
 { pkgs, config, ... }: {
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [ vim mkalias R raycast ];
+  environment.systemPackages = with pkgs; [ vim mkalias R ];
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
