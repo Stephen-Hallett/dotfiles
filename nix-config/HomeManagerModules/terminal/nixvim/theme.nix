@@ -1,11 +1,11 @@
-{ pkgs-unstable, ... }:
-{
+{ pkgs-unstable, ... }: {
   programs.nixvim.colorschemes = {
     catppuccin = {
       enable = true;
       package = pkgs-unstable.vimPlugins.catppuccin-nvim;
       settings = {
-        flavour = "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
+        flavour =
+          "macchiato"; # "latte", "mocha", "frappe", "macchiato" or raw lua code
         no_bold = false;
         no_italic = false;
         no_underline = false;

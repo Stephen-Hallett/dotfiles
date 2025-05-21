@@ -1,20 +1,12 @@
 # Config for packages shared by all machines
 
-{ pkgs, lib, ... }:
-{
+{ pkgs, lib, ... }: {
   nix = {
     package = pkgs.nix;
-    settings.experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+    settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-    };
-  };
+  nixpkgs = { config = { allowUnfree = true; }; };
 
   home = {
     stateVersion = "24.11";
@@ -28,7 +20,7 @@
       wget
       curl
       (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
-     ];
+    ];
   };
 
   fonts.fontconfig.enable = true;

@@ -1,11 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  lib,
-  config,
-  ...
-}:
-{
+{ pkgs, pkgs-unstable, lib, config, ... }: {
   options = {
     core-packages.ruff.enable = lib.mkEnableOption "enable core-packages.ruff";
   };

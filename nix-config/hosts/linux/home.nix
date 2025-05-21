@@ -1,12 +1,7 @@
 # Specific config for linux distributions, inherits personal (and subsequently common & core) packages
 
-{
-  pkgs,
-  ...
-}:
-{
-  imports = [ 
-  ];
+{ pkgs, ... }: {
+  imports = [ ];
 
   home = {
     packages = with pkgs; [

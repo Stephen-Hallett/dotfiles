@@ -2,9 +2,7 @@
   programs.nixvim = {
 
     autoGroups = {
-      rel_number_toggle = {
-        clear = true;
-      };
+      rel_number_toggle = { clear = true; };
 
       highlight_yank = { };
 
@@ -13,10 +11,7 @@
 
     autoCmd = [
       {
-        event = [
-          "InsertEnter"
-          "InsertLeave"
-        ];
+        event = [ "InsertEnter" "InsertLeave" ];
         desc = "Disable Treesitter for large files";
         callback = {
           __raw = ''
@@ -31,13 +26,8 @@
 
       # The two following autocmds are from u/shivamrajput958
       {
-        event = [
-          "InsertEnter"
-          "BufLeave"
-          "FocusLost"
-          "CmdlineEnter"
-          "WinLeave"
-        ];
+        event =
+          [ "InsertEnter" "BufLeave" "FocusLost" "CmdlineEnter" "WinLeave" ];
         group = "rel_number_toggle";
         callback = {
           __raw = ''
@@ -52,13 +42,8 @@
       }
 
       {
-        event = [
-          "InsertLeave"
-          "BufEnter"
-          "FocusGained"
-          "CmdlineLeave"
-          "WinEnter"
-        ];
+        event =
+          [ "InsertLeave" "BufEnter" "FocusGained" "CmdlineLeave" "WinEnter" ];
         group = "rel_number_toggle";
         callback = {
           __raw = ''
@@ -86,16 +71,7 @@
 
       {
         event = "FileType";
-        pattern = [
-          "astro"
-          "css"
-          "cpp"
-          "html"
-          "js"
-          "json"
-          "nix"
-          "sh"
-        ];
+        pattern = [ "astro" "css" "cpp" "html" "js" "json" "nix" "sh" ];
         group = "filetype_indents";
         desc = "Set indent to 2 for given filetypes";
         callback = {

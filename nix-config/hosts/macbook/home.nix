@@ -1,17 +1,9 @@
 # Specific config for my macbook, inherits personal (and subsequently common & core) packages
 
-{
-  pkgs,
-  ...
-}:
-{
+{ pkgs, ... }: {
   imports = [ ./../personal/home.nix ];
 
-  home = {
-    packages = with pkgs; [];
-  };
+  home = { packages = with pkgs; [ ]; };
 
-  mac-packages = {
-    alacritty.enable = true;
-  };
+  mac-packages = { alacritty.enable = true; };
 }

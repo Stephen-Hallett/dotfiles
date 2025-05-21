@@ -1,13 +1,5 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
-  options = {
-    core-packages.fzf.enable = lib.mkEnableOption "enable fzf";
-  };
+{ pkgs, lib, config, ... }: {
+  options = { core-packages.fzf.enable = lib.mkEnableOption "enable fzf"; };
 
   config = lib.mkIf config.core-packages.fzf.enable {
     programs.fzf = {
@@ -25,7 +17,8 @@
         "--bind 'ctrl-a:select-all'"
       ];
 
-      changeDirWidgetCommand = "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
+      changeDirWidgetCommand =
+        "fd --type=d --hidden --strip-cwd-prefix --exclude .git";
 
       fileWidgetOptions = [
         "--preview '([[ -f {} ]] && (bat --style=numbers --color=always {} || cat {})) || ([[ -d {} ]] && (tree -C {} | less)) || echo {} 2> /dev/null | head -200'"

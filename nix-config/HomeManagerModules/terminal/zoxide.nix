@@ -1,5 +1,4 @@
-{ lib, config, ... }:
-{
+{ lib, config, ... }: {
   options = {
     core-packages.zoxide.enable = lib.mkEnableOption "enable zoxide";
   };

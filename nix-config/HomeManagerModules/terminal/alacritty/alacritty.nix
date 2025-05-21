@@ -1,8 +1,5 @@
-{config, pkgs, lib, ... }: 
-{
-  imports = [
-    ./themes/catppuccin_macchiato.nix
-  ];
+{ config, pkgs, lib, ... }: {
+  imports = [ ./themes/catppuccin_macchiato.nix ];
 
   options = {
     mac-packages.alacritty.enable = lib.mkEnableOption "enable alacritty";
@@ -12,13 +9,9 @@
     programs.alacritty = {
       enable = true;
       settings = {
-        env = {
-          TERM = "xterm-256color";
-        };
+        env = { TERM = "xterm-256color"; };
 
-        selection = {
-          save_to_clipboard = true;
-        };
+        selection = { save_to_clipboard = true; };
 
         window = {
           dynamic_padding = false;

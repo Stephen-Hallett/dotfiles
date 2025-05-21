@@ -1,13 +1,5 @@
-{
-  personal,
-  lib,
-  config,
-  ...
-}:
-{
-  options = {
-    core-packages.git.enable = lib.mkEnableOption "enable git";
-  };
+{ personal, lib, config, ... }: {
+  options = { core-packages.git.enable = lib.mkEnableOption "enable git"; };
 
   config = lib.mkIf config.core-packages.git.enable {
     programs.git = {
@@ -15,9 +7,7 @@
       userName = "${personal.gitUser}";
       userEmail = "${personal.gitEmail}";
 
-      aliases = {
-        tree = "log --all --graph --decorate";
-      };
+      aliases = { tree = "log --all --graph --decorate"; };
 
       extraConfig = {
         init.defaultBranch = "main";

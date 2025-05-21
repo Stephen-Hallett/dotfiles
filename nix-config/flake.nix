@@ -21,28 +21,18 @@
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { 
-    self, 
-    nixpkgs,
-    nixpkgs-unstable,
-    home-manager,
-    nix-darwin,
-    nix-homebrew,
-    ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
+    , nix-homebrew, ... }@inputs:
     let
       inherit (self) outputs;
 
       specialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          config.allowUnfree = true;
-        };
+        pkgs-unstable = import nixpkgs-unstable { config.allowUnfree = true; };
         inherit inputs personal;
       };
 
       extraSpecialArgs = {
-        pkgs-unstable = import nixpkgs-unstable {
-          config.allowUnfree = true;
-        };
+        pkgs-unstable = import nixpkgs-unstable { config.allowUnfree = true; };
         inherit inputs personal homePC macbook work default;
       };
 
@@ -58,7 +48,8 @@
 
       homePC = {
         user = "stephen";
-        hostname = "SWAGGERMUFFIN"; # My dad asked me for a hostname when I was 12
+        hostname =
+          "SWAGGERMUFFIN"; # My dad asked me for a hostname when I was 12
       };
 
       macbook = {
@@ -66,40 +57,35 @@
         hostname = "Stephens-MacBook-Pro.local";
       };
 
-      work = {
-        user = "stephen";
-      };
+      work = { user = "stephen"; };
 
-      workMac = {
-        user = "stephenhallett";
-      };
+      workMac = { user = "stephenhallett"; };
 
-      default = {
-        user = builtins.getEnv "USER";
-      };
+      default = { user = builtins.getEnv "USER"; };
 
-      mkHomeConfig = machineModule: system: home-manager.lib.homeManagerConfiguration {
-        inherit extraSpecialArgs;
-        pkgs = import nixpkgs {
-          inherit system;
+      mkHomeConfig = machineModule: system:
+        home-manager.lib.homeManagerConfiguration {
+          inherit extraSpecialArgs;
+          pkgs = import nixpkgs { inherit system; };
+
+          modules = [
+            ./HomeManagerModules
+            inputs.nixvim.homeManagerModules.nixvim
+            machineModule
+          ];
         };
-
-        modules = [
-          ./HomeManagerModules
-          inputs.nixvim.homeManagerModules.nixvim
-          machineModule
-        ];
-      };
-    in
-    {
+    in {
       homeConfigurations = {
         # HomePC
-        "${homePC.user}@${homePC.hostname}" = mkHomeConfig ./hosts/homeWSL/home.nix "x86_64-linux";
+        "${homePC.user}@${homePC.hostname}" =
+          mkHomeConfig ./hosts/homeWSL/home.nix "x86_64-linux";
         # Macbook
-        "${macbook.user}@${macbook.hostname}" = mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
+        "${macbook.user}@${macbook.hostname}" =
+          mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
         # Work WSL
         "${work.user}" = mkHomeConfig ./hosts/workWSL/home.nix "x86_64-linux";
-        "${workMac.user}" = mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
+        "${workMac.user}" =
+          mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
         # Arm machines
         "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
         "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
@@ -108,7 +94,7 @@
 
       darwinConfigurations = {
         "macbook" = nix-darwin.lib.darwinSystem {
-          modules = [ 
+          modules = [
             ./hosts/macbook/configuration.nix
             ./hosts/macbook/darwin-modules/modules.nix
             nix-homebrew.darwinModules.nix-homebrew
@@ -116,7 +102,7 @@
         };
 
         "work" = nix-darwin.lib.darwinSystem {
-          modules = [ 
+          modules = [
             ./hosts/workMac/configuration.nix
             ./hosts/workMac/darwin-modules/modules.nix
             nix-homebrew.darwinModules.nix-homebrew

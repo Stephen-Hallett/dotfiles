@@ -1,8 +1,6 @@
 {
   programs.nixvim = {
-    clipboard = {
-      register = "unnamedplus";
-    };
+    clipboard = { register = "unnamedplus"; };
 
     opts = {
       # Make line numbers default
@@ -55,12 +53,7 @@
       timeoutlen = 300;
 
       # Set completeopt to have a better completion experience
-      completeopt = [
-        "menu"
-        "menuone"
-        "preview"
-        "noselect"
-      ];
+      completeopt = [ "menu" "menuone" "preview" "noselect" ];
 
       # NOTE: You should make sure your terminal supports this
       termguicolors = true;

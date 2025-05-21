@@ -1,19 +1,7 @@
 # Specific config for work WSL, inherits common (and subsequently core) packages
 
-{
-  pkgs,
-  ...
-}:
-{
-  imports = [ 
-    ./../common/home.nix 
-    ./../linux/home.nix
-  ];
+{ pkgs, ... }: {
+  imports = [ ./../common/home.nix ./../linux/home.nix ];
 
-  home = {
-    packages = with pkgs; [
-      glibc
-      nfs-utils
-    ];
-  };
+  home = { packages = with pkgs; [ glibc nfs-utils ]; };
 }

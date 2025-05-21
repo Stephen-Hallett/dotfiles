@@ -1,13 +1,5 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
-  options = {
-    core-packages.zsh.enable = lib.mkEnableOption "enable zsh";
-  };
+{ pkgs, lib, config, ... }: {
+  options = { core-packages.zsh.enable = lib.mkEnableOption "enable zsh"; };
 
   config = lib.mkIf config.core-packages.zsh.enable {
     programs.zsh = {
@@ -16,22 +8,21 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      shellAliases =
-        let
-          flakeDir = "~/dotfiles/nix-config";
-        in
-        {
-          hms = "home-manager switch --impure --flake ${flakeDir} && source ~/dotfiles/Brewfile.sh && exec zsh";
-          drs = "darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
-          drs-work = "darwin-rebuild switch --flake ${flakeDir}#work && exec zsh";
+      shellAliases = let flakeDir = "~/dotfiles/nix-config";
+      in {
+        hms =
+          "home-manager switch --impure --flake ${flakeDir} && source ~/dotfiles/Brewfile.sh && exec zsh";
+        drs = "darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
+        drs-work = "darwin-rebuild switch --flake ${flakeDir}#work && exec zsh";
 
-          ".." = "z ..";
-          cat = "bat";
-          pip="pip3";
-          python="python3";
-          ls="eza --icons=always --color=always --long --no-filesize --no-time --no-user --group-directories-first";
-          cd="z";
-        };
+        ".." = "z ..";
+        cat = "bat";
+        pip = "pip3";
+        python = "python3";
+        ls =
+          "eza --icons=always --color=always --long --no-filesize --no-time --no-user --group-directories-first";
+        cd = "z";
+      };
       history = {
         save = 1000;
         size = 1000;
@@ -57,7 +48,7 @@
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           export HOMEBREW_GIT_PATH=${pkgs.git}/bin/git
         fi
-        
+
         unsetopt beep
 
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -65,7 +56,7 @@
         zstyle ':completion:*' menu select
 
         zstyle -e ':completion:*:default' list-colors 'reply=("''${PREFIX:+=(#bi)($PREFIX:t)(?)*==02=01}:''${(s.:.)LS_COLORS}")'
-        
+
         autoload -Uz is-at-least
 
         source ${pkgs.fzf-git-sh}/share/fzf-git-sh/fzf-git.sh

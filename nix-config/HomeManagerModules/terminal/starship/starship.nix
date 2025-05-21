@@ -1,10 +1,4 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
+{ pkgs, lib, config, ... }: {
   options = {
     core-packages.starship.enable = lib.mkEnableOption "enable starship";
   };

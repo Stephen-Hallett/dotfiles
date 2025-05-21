@@ -1,15 +1,9 @@
 # Config for packages shared by all development machines (non VM/edge devices)
 
-{
-  pkgs,
-  ...
-}:
-{
+{ pkgs, ... }: {
   imports = [ ./../core/home.nix ];
 
-  common-packages = {
-    tmux.enable = true;
-  };
+  common-packages = { tmux.enable = true; };
 
   home = {
     packages = with pkgs; [
