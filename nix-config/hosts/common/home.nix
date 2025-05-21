@@ -35,6 +35,7 @@
       nodemon
       yarn
       vsce
+      nixfmt-classic
     ];
 
     sessionVariables = {

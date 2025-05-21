@@ -5,6 +5,7 @@
           vim
           mkalias
           R
+          raycast
         ];
 
       fonts.packages = with pkgs;
