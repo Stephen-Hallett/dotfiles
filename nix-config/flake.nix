@@ -95,6 +95,7 @@
       darwinConfigurations = {
         "macbook" = nix-darwin.lib.darwinSystem {
           modules = [
+            ./hosts/common/darwin-modules/modules.nix
             ./hosts/macbook/configuration.nix
             ./hosts/macbook/darwin-modules/modules.nix
             nix-homebrew.darwinModules.nix-homebrew
@@ -103,6 +104,7 @@
 
         "work" = nix-darwin.lib.darwinSystem {
           modules = [
+            ./hosts/common/darwin-modules/modules.nix
             ./hosts/workMac/configuration.nix
             ./hosts/workMac/darwin-modules/modules.nix
             nix-homebrew.darwinModules.nix-homebrew

@@ -1,25 +1,17 @@
 { pkgs, ... }: {
-  nix-homebrew = {
-    enable = true;
-    enableRosetta = true;
-    user = "stephen";
-    autoMigrate = true;
-  };
+  nix-homebrew = { user = "stephen"; };
 
   homebrew = {
     enable = true;
-    brews = [ "mas" "python@3.10" "python@3.11" "python@3.12" "python@3.13" ];
     casks = [
       # ----- General -----
       "google-chrome"
       "postman"
-      "docker"
-      "vlc"
+      "orbstack"
       "rstudio"
       "zoom"
       "spotify"
       "discord"
-      "visual-studio-code"
       # ----- Personal -----
       "ultimaker-cura"
       "jagex"
