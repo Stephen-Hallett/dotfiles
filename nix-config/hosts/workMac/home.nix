@@ -3,7 +3,7 @@
 { pkgs, ... }: {
   imports = [ ./../common/home.nix ];
 
-  home = { packages = with pkgs; [ ]; };
+  home = { packages = with pkgs; [ docker docker-compose docker-buildx ]; };
 
   work-packages = { git-work.enable = true; };
 
