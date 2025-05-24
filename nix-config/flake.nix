@@ -121,12 +121,11 @@
           inherit specialArgs;
           modules = [
             proxmox-nixos.nixosModules.proxmox-ve
-
             ({ lib, pkgs, ... }: {
               nixpkgs.overlays = [ proxmox-nixos.overlays.x86_64-linux ];
             })
 
-            /home/stephen/dotfiles/nix-config/hosts/homelab/configuration.nix
+            ./nix-config/hosts/homelab/configuration.nix
           ];
         };
       };
