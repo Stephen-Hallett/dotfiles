@@ -38,7 +38,7 @@
         autoload -Uz bashcompinit && bashcompinit
       '';
 
-      initExtra = ''
+      initContent = ''
         zstyle :compinstall filename "$HOME/.zshrc"
 
         source ~/dotfiles/open_message.sh

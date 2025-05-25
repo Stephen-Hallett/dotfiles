@@ -9,7 +9,7 @@
   nixpkgs = { config = { allowUnfree = true; }; };
 
   home = {
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     username = builtins.getEnv "USER";
     homeDirectory = builtins.getEnv "HOME";
 
@@ -19,7 +19,7 @@
       fantasque-sans-mono
       wget
       curl
-      (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+      nerd-fonts.symbols-only
     ];
   };
 

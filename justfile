@@ -39,7 +39,7 @@ build:
     if [[ "$(uname -s)" == "Darwin" ]]; then
         if command -v darwin-rebuild >/dev/null 2>&1; then
             echo "Installing Nix Darwin"
-            nix run nix-darwin/nix-darwin-24.11#darwin-rebuild -- switch
+            nix run nix-darwin/nix-darwin-25.05#darwin-rebuild -- switch
         fi
         echo "Installing nix darwin configuration"
         darwin-rebuild switch --flake {{env_var("HOME")}}/dotfiles/nix-config#macbook

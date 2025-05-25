@@ -14,6 +14,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8814au ];
+  boot.loader.grub.enable = false;
+
   hardware.enableAllFirmware = true;
 
   networking.hostName = "homelab"; # Define your hostname.
@@ -36,7 +38,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -63,8 +65,8 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "stephen";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "stephen";
 
   services.proxmox-ve = {
     enable = true;
