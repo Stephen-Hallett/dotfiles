@@ -2,10 +2,10 @@
   imports = [ ./themes/catppuccin_macchiato.nix ];
 
   options = {
-    mac-packages.alacritty.enable = lib.mkEnableOption "enable alacritty";
+    unix-packages.alacritty.enable = lib.mkEnableOption "enable alacritty";
   };
 
-  config = lib.mkIf config.mac-packages.alacritty.enable {
+  config = lib.mkIf config.unix-packages.alacritty.enable {
     programs.alacritty = {
       enable = true;
       settings = {

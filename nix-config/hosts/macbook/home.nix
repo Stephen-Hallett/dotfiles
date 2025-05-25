@@ -5,5 +5,5 @@
 
   home = { packages = with pkgs; [ ]; };
 
-  mac-packages = { alacritty.enable = true; };
+  unix-packages = { alacritty.enable = true; };
 }

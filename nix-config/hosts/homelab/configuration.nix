@@ -16,7 +16,7 @@
   boot.extraModulePackages = with config.boot.kernelPackages; [ rtl8814au ];
   hardware.enableAllFirmware = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "homelab"; # Define your hostname.
   networking.wireless.enable = false;
 
   # Enable the X11 windowing system.

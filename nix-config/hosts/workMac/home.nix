@@ -7,5 +7,5 @@
 
   work-packages = { git-work.enable = true; };
 
-  mac-packages = { alacritty.enable = true; };
+  unix-packages = { alacritty.enable = true; };
 }

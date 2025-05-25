@@ -93,7 +93,7 @@
         "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
         "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
         "stephen@media" = mkHomeConfig ./hosts/vm/home.nix "aarch64-linux";
-        "stephen@nixos" = mkHomeConfig ./hosts/vm/home.nix "x86_64-linux";
+        "stephen@homelab" = mkHomeConfig ./hosts/homelab/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {
@@ -117,7 +117,7 @@
       };
 
       nixosConfigurations = {
-        "nixos" = nixpkgs.lib.nixosSystem rec {
+        homelab = nixpkgs.lib.nixosSystem rec {
           inherit specialArgs;
           modules = [
             proxmox-nixos.nixosModules.proxmox-ve
