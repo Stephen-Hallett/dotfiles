@@ -125,7 +125,7 @@
               nixpkgs.overlays = [ proxmox-nixos.overlays.x86_64-linux ];
             })
 
-            ./nix-config/hosts/homelab/configuration.nix
+            ./hosts/homelab/configuration.nix
           ];
         };
       };

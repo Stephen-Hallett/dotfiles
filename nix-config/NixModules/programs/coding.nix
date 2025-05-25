@@ -8,6 +8,7 @@
     };
 
     environment.systemPackages = with pkgs; [
+      vscode
       git
       gnumake
       pkgs-unstable.nodejs

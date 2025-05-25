@@ -2,3 +2,4 @@ Brewfile.lock.json
 .config/helm
 .DS_Store
 node_modules
+config.vsix

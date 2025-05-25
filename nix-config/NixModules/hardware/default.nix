@@ -1,1 +1,1 @@
-{ imports = [ ./swap.nix ]; }
+{ imports = [ ./swap.nix ./bluetooth.nix ]; }
