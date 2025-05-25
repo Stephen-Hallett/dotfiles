@@ -1,8 +1,5 @@
 { pkgs, config, ... }: {
   system = {
-    stateVersion = 5;
-    configurationRevision = null;
-
     defaults = {
       dock = {
         persistent-apps = [
