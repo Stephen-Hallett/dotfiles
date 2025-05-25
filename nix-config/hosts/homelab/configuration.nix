@@ -10,6 +10,8 @@
     ./hardware-configuration.nix
   ];
 
+  nix-config = { sunshine.enable = true; };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;

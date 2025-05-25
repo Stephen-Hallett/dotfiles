@@ -16,10 +16,13 @@
     networking.enable = true;
     shell-config.enable = true;
     swap.enable = true;
+    steam.enable = true;
   };
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  powerManagement.enable = false;
 
   # Delete configurations older than 30 days
   nix.gc = {
