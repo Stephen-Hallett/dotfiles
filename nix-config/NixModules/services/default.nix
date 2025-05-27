@@ -1,1 +1,1 @@
-{ imports = [ ./networking.nix ./sunshine.nix ]; }
+{ imports = [ ./networking.nix ./sunshine.nix ./proxmox.nix ]; }

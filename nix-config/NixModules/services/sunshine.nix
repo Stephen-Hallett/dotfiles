@@ -1,6 +1,6 @@
 { pkgs, lib, config, ... }: {
   options = {
-    nix-config.sunshine.enable = lib.mkEnableOption "enable firefox";
+    nix-config.sunshine.enable = lib.mkEnableOption "enable sunshine";
   };
 
   config = lib.mkIf config.nix-config.sunshine.enable {

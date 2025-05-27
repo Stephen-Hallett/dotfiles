@@ -10,7 +10,10 @@
     ./hardware-configuration.nix
   ];
 
-  nix-config = { sunshine.enable = true; };
+  nix-config = {
+    sunshine.enable = true;
+    proxmox.enable = true;
+  };
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -76,11 +79,6 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "stephen";
-
-  services.proxmox-ve = {
-    enable = true;
-    ipAddress = "192.168.1.72";
-  };
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
