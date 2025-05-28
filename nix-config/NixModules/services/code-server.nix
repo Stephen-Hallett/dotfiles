@@ -8,6 +8,7 @@
       enable = true;
       port = 4200;
       user = "stephen";
+      host = "0.0.0.0";
 
       auth = "password";
       hashedPassword =
@@ -37,7 +38,7 @@
           skellock.just
         ];
       };
-
     };
+    networking.firewall.allowedTCPPorts = [ 4200 ];
   };
 }
