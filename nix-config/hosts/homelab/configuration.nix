@@ -13,6 +13,8 @@
   nix-config = {
     sunshine.enable = true;
     proxmox.enable = true;
+    headless.enable = false;
+    desktop.enable = true;
   };
 
   # Bootloader.
@@ -25,19 +27,6 @@
 
   networking.hostName = "homelab"; # Define your hostname.
   networking.wireless.enable = false;
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "nz";
-    variant = "";
-  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
