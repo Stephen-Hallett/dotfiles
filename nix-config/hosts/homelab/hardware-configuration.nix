@@ -28,6 +28,15 @@
     fsType = "ext4";
   };
 
+  fileSystems."/home/stephen/Media" = {
+    device = "192.168.1.152:/mnt/Mediastack";
+    fsType = "nfs";
+    options = [ "defaults" "noatime" "vers=3" "_netdev" ];
+    neededForBoot = false;
+  };
+
+  systemd.tmpfiles.rules = [ "d /stephen/Media 0755 root root -" ];
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/422005eb-61eb-4721-8635-084e24da2a39"; }];
 
