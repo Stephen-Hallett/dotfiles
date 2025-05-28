@@ -15,6 +15,7 @@
     proxmox.enable = true;
     headless.enable = false;
     desktop.enable = true;
+    code-server.enable = true;
   };
 
   # Bootloader.
