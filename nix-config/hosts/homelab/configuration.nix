@@ -13,9 +13,10 @@
   nix-config = {
     sunshine.enable = true;
     proxmox.enable = true;
-    headless.enable = false;
-    desktop.enable = true;
+    headless.enable = true;
+    desktop.enable = false;
     code-server.enable = true;
+    tailscale.enable = true;
   };
 
   # Bootloader.

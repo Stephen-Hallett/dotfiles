@@ -26,13 +26,11 @@
           catppuccin.catppuccin-vsc-icons
           github.vscode-github-actions
           hashicorp.terraform
-          jnoortheen.nix-ide
           ms-azuretools.vscode-docker
           ms-toolsai.jupyter
           ms-toolsai.jupyter-keymap
           ms-toolsai.jupyter-renderers
           ms-vscode.cmake-tools
-          vscodevim.vim
           redhat.vscode-yaml
           njpwerner.autodocstring
           skellock.just

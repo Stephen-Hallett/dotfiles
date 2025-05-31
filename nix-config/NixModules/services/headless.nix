@@ -6,10 +6,12 @@
   config = lib.mkIf config.nix-config.headless.enable {
     services.xserver = {
       enable = true;
-      videoDrivers = [ "amdgpu" "dummy" ];
+      videoDrivers = [ "dummy" ];
       autorun = true;
 
       displayManager.startx.enable = true; # No GDM or desktop manager
+      windowManager.openbox.enable = true;
+      displayManager.autoLogin.user = "stephen";
 
       config = ''
         Section "Device"
@@ -40,8 +42,8 @@
     };
 
     # Needed for 32-bit games
-    hardware.opengl.driSupport32Bit = true;
-    hardware.opengl.enable = true;
+    hardware.graphics.enable32Bit = true;
+    hardware.graphics.enable = true;
 
   };
 }
