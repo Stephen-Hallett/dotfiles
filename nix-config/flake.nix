@@ -20,12 +20,10 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
-    # NixOS
-    proxmox-nixos.url = "github:SaumonNet/proxmox-nixos";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-    , nix-homebrew, proxmox-nixos, ... }@inputs:
+    , nix-homebrew, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -89,12 +87,6 @@
         "${work.user}" = mkHomeConfig ./hosts/workWSL/home.nix "x86_64-linux";
         "${workMac.user}" =
           mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
-        # Arm machines
-        "root@DietPi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
-        "pi@raspberrypi" = mkHomeConfig ./hosts/core/home.nix "aarch64-linux";
-        "stephen@media" = mkHomeConfig ./hosts/vm/home.nix "aarch64-linux";
-        "stephen@homelab" =
-          mkHomeConfig ./hosts/homelab/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {
@@ -117,19 +109,7 @@
         };
       };
 
-      nixosConfigurations = {
-        homelab = nixpkgs.lib.nixosSystem rec {
-          inherit specialArgs;
-          modules = [
-            proxmox-nixos.nixosModules.proxmox-ve
-            ({ lib, pkgs, ... }: {
-              nixpkgs.overlays = [ proxmox-nixos.overlays.x86_64-linux ];
-            })
-
-            ./hosts/homelab/configuration.nix
-          ];
-        };
-      };
+      nixosConfigurations = { };
     };
 }
 
