@@ -23,7 +23,7 @@
       "Notability" = 360593530;
       "Xcode" = 497799835;
       "Infuse" = 1136220934;
-      "Tailscale" = 1470499037;
+      "Tailscale" = 1470499037; Home
     };
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
