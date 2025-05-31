@@ -12,6 +12,7 @@
       "visual-studio-code"
       "raycast"
       "firefox"
+      "font-fantasque-sans-mono-nerd-font"
     ];
     masApps = { };
     onActivation.autoUpdate = true;
