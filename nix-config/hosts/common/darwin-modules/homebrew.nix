@@ -12,6 +12,7 @@
       "visual-studio-code"
       "raycast"
       "firefox"
+      "google-chrome"
       "font-fantasque-sans-mono-nerd-font"
     ];
     masApps = { };

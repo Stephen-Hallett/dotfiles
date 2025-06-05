@@ -4,7 +4,6 @@
   homebrew = {
     casks = [
       # ----- General -----
-      "google-chrome"
       "postman"
       "orbstack"
       "rstudio"
