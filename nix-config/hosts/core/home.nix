@@ -20,6 +20,7 @@
       wget
       curl
       nerd-fonts.symbols-only
+      fd
     ];
   };
 
