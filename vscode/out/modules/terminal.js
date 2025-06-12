@@ -21,5 +21,6 @@ function configureTerminal(config) {
     }, vscode.ConfigurationTarget.Global);
     config.update("terminal.external.osxExec", "Alacritty.app", vscode.ConfigurationTarget.Global);
     config.update("terminal.integrated.defaultProfile.osx", "zsh", vscode.ConfigurationTarget.Global);
+    config.update("terminal.integrated.enableMultiLinePasteWarning", "never", true);
 }
 //# sourceMappingURL=terminal.js.map

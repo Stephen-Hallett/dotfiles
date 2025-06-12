@@ -38,4 +38,9 @@ export function configureTerminal(
     "zsh",
     vscode.ConfigurationTarget.Global
   );
+  config.update(
+    "terminal.integrated.enableMultiLinePasteWarning",
+    "never",
+    true
+  );
 }

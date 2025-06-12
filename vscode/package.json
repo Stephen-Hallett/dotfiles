@@ -15,9 +15,14 @@
   ],
   "extensionPack": [
     "charliermarsh.ruff",
+    "christian-kohler.path-intellisense",
+    "detachhead.basedpyright",
     "esbenp.prettier-vscode",
     "github.vscode-github-actions",
+    "GitHub.copilot",
+    "GitHub.copilot-chat",
     "grapecity.gc-excelviewer",
+    "Gruntfuggly.todo-tree",
     "hashicorp.terraform",
     "jnoortheen.nix-ide",
     "ms-azuretools.vscode-azurefunctions",
@@ -30,8 +35,10 @@
     "ms-toolsai.vscode-jupyter-cell-tags",
     "ms-toolsai.vscode-jupyter-slideshow",
     "ms-vscode-remote.remote-wsl",
+    "njpwerner.autodocstring",
     "redhat.vscode-yaml",
-    "njpwerner.autodocstring"
+    "tamasfe.even-better-toml",
+    "ZainChen.json"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
