@@ -31,4 +31,9 @@ export function configureRuff(
     true,
     vscode.ConfigurationTarget.Global
   );
+  config.update(
+    "ruff.importStrategy",
+    "fromEnvironment",
+    vscode.ConfigurationTarget.Global
+  );
 }
