@@ -30,6 +30,7 @@
       yarn
       vsce
       nixfmt-classic
+      hadolint
     ];
 
     sessionVariables = {
