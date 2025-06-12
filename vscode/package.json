@@ -8,7 +8,7 @@
   "activationEvents": [
     "onStartupFinished"
   ],
-  "version": "1.0.0",
+  "version": "2.0.0",
   "main": "./out/extension.js",
   "categories": [
     "Extension Packs"
@@ -16,8 +16,6 @@
   "extensionPack": [
     "charliermarsh.ruff",
     "esbenp.prettier-vscode",
-    "catppuccin.catppuccin-vsc",
-    "catppuccin.catppuccin-vsc-icons",
     "github.vscode-github-actions",
     "grapecity.gc-excelviewer",
     "hashicorp.terraform",
@@ -32,12 +30,8 @@
     "ms-toolsai.vscode-jupyter-cell-tags",
     "ms-toolsai.vscode-jupyter-slideshow",
     "ms-vscode-remote.remote-wsl",
-    "ms-vscode.azure-account",
-    "ms-vscode.cmake-tools",
-    "vscodevim.vim",
     "redhat.vscode-yaml",
-    "njpwerner.autodocstring",
-    "skellock.just"
+    "njpwerner.autodocstring"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -55,6 +49,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Stephen-Hallett/dotfiles.git"
+    "url": "git+https://github.com/Stephen-Hallett/vscode-config.git"
   }
 }
