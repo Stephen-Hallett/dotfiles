@@ -109,7 +109,13 @@
         };
       };
 
-      nixosConfigurations = { };
+      nixosConfigurations = {
+        stevohome = nixpkgs.lib.nixosSystem rec {
+          inherit specialArgs;
+          modules = [ ./nix-config/Hosts/homeNix/configuration.nix ];
+        };
+
+      };
     };
 }
 

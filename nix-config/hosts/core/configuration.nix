@@ -1,4 +1,4 @@
-{ personal, config, ... }:
+{ personal, config, inputs, pkgs, ... }:
 
 {
   imports = [ ./../../NixModules ];
@@ -6,29 +6,23 @@
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
   nix-config = {
-    bluetooth.enable = true;
-    coding.enable = true;
-    docker.enable = true;
-    firefox.enable = true;
-    fonts.enable = true;
     home-manager.enable = true;
-    neovim.enable = true;
-    networking.enable = true;
     shell-config.enable = true;
-    swap.enable = true;
-    steam.enable = true;
   };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Enable flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   powerManagement.enable = false;
 
-  # Delete configurations older than 30 days
+  # Delete configurations older than 7 days
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 30d";
+    options = "--delete-older-than 7d";
   };
 
   # Set your time zone.
@@ -49,6 +43,24 @@
     LC_TIME = "en_NZ.UTF-8";
   };
 
-  system.stateVersion = "25.05"; # Did you read the comment?
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.stephen = {
+    isNormalUser = true;
+    description = "Stephen Hallett";
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [ ];
+  };
 
+  # Enable automatic login for the user.
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "stephen";
+
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
+
+  system.stateVersion = "25.05"; # Did you read the comment?
 }
