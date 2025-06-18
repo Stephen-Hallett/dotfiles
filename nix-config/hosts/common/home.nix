@@ -31,6 +31,7 @@
       vsce
       nixfmt-classic
       hadolint
+      gh
     ];
 
     sessionVariables = {
