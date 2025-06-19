@@ -17,6 +17,7 @@
       "autodesk-fusion"
       "arduino-ide"
       "tailscale"
+      "nextcloud"
     ];
     masApps = {
       "Notability" = 360593530;
