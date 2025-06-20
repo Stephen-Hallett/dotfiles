@@ -115,6 +115,7 @@ ignore = [
     "EM102",  # F-strings in exceptions
     "PLR0913",# Maximum 5 function arguments
     "N802",   # Not allowed capital letters in function names
+    "N812",   # Not allowed to import lowercase variable as capitalised variable
     "N815"    # Not allowed mixed case variables in class scope
 ]
 

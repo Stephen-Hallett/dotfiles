@@ -15,5 +15,6 @@ function configureRuff(config) {
     }, vscode.ConfigurationTarget.Global);
     config.update("notebook.defaultFormatter", "charliermarsh.ruff", vscode.ConfigurationTarget.Global);
     config.update("notebook.formatOnSave.enabled", true, vscode.ConfigurationTarget.Global);
+    config.update("ruff.importStrategy", "fromEnvironment", vscode.ConfigurationTarget.Global);
 }
 //# sourceMappingURL=ruff.js.map
