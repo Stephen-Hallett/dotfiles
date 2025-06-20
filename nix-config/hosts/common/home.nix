@@ -32,6 +32,10 @@
       nixfmt-classic
       hadolint
       gh
+
+      docker
+      docker-compose
+      docker-buildx
     ];
 
     sessionVariables = {

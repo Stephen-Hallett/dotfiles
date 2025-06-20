@@ -2,6 +2,9 @@
   nix-homebrew = { user = "stephen"; };
 
   homebrew = {
+    brews = [
+     "postgresql@17"
+    ];
     casks = [
       # ----- General -----
       "postman"

@@ -3,5 +3,5 @@
 { pkgs, ... }: {
   imports = [ ./../common/home.nix ];
 
-  home = { packages = with pkgs; [ vsce ]; };
+  home = { packages = with pkgs; [ vsce postgresql ]; };
 }
