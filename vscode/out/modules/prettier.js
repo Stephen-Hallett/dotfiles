@@ -13,6 +13,8 @@ function configurePrettier(config) {
         "javascriptreact",
         "typescriptreact",
         "json",
+        "jsonc",
+        "jsonl",
     ]) {
         config.update(`[${language}]`, prettierConfig, vscode.ConfigurationTarget.Global);
     }
