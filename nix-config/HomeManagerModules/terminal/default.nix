@@ -12,5 +12,6 @@
     ./eza.nix
     ./homebrew/homebrew.nix
     ./shellFunctions
+    ./clipboard.nix
   ];
 }
