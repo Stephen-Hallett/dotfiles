@@ -94,6 +94,7 @@ select = [
 ]
 
 ignore = [
+<<<<<<< Updated upstream
     "TD003",   # missing-todo-link
     "ANN101",  # missing-type-self
     "ANN102",  # missing-type-cls
@@ -117,6 +118,32 @@ ignore = [
     "N802",    # Not allowed capital letters in function names
     "N812",    # Not allowed to import lowercase variable as capitalised variable
     "N815",    # Not allowed mixed case variables in class scope
+=======
+    "TD003",  # missing-todo-link
+    "ANN101", # missing-type-self
+    "ANN102", # missing-type-cls
+    "W191",   # tab-indentation
+    "E111",   # indentation-with-invalid-multiple
+    "E114",   # indentation-with-invalid-multiple-comment
+    "E117",   # over-indented
+    "EM101",  # Assign error message to variable first
+    "D206",   # indent-with-spaces
+    "D300",   # triple-single-quotes
+    "Q000",   # bad-quotes-inline-string
+    "Q001",   # bad-quotes-multiline-string
+    "Q002",   # bad-quotes-docstring
+    "Q003",   # avoidable-escaped-quote
+    "COM812", # missing-trailing-comma
+    "ISC001", # single-line-implicit-string-concatenation
+    "ISC002", # multi-line-implicit-string-concatenation
+    "T201",   # print-statement-found
+    "N803",   # capital-letter-variable-names
+    "EM102",  # F-strings in exceptions
+    "PLR0913",# Maximum 5 function arguments
+    "N802",   # Not allowed capital letters in function names
+    "N812",   # Not allowed to import lowercase variable as capitalised variable
+    "N815"    # Not allowed mixed case variables in class scope
+>>>>>>> Stashed changes
 ]
 
 fixable = ["ALL"]
