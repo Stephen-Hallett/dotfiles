@@ -4,4 +4,6 @@
   imports = [ ./../common/home.nix ./../linux/home.nix ];
 
   home = { packages = with pkgs; [ glibc nfs-utils ]; };
+  wsl-packages = { homebrew.enable = true; };
+
 }

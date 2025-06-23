@@ -45,12 +45,6 @@
         source ~/dotfiles/open_message.sh
         echo "\033[1;32m$message\033[0m"
 
-        # Add linuxbrew to path
-        if [[ "$HOST" == "SWAGGERMUFFIN" || "$HOST" == "HOSTNAME2" ]]; then
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          export HOMEBREW_GIT_PATH=${pkgs.git}/bin/git
-        fi
-
         unsetopt beep
 
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'

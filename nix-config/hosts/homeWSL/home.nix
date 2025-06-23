@@ -4,4 +4,6 @@
   imports = [ ./../personal/home.nix ./../linux/home.nix ];
 
   home = { packages = with pkgs; [ ]; };
+
+  wsl-packages = { homebrew.enable = true; };
 }

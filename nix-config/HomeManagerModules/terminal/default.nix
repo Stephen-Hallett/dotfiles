@@ -10,5 +10,7 @@
     ./alacritty/alacritty.nix
     ./tmux.nix
     ./eza.nix
+    ./homebrew/homebrew.nix
+    ./shellFunctions
   ];
 }

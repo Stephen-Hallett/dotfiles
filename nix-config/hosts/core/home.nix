@@ -37,5 +37,6 @@
     eza.enable = true;
     git.enable = true;
     ripgrep.enable = true;
+    shellfunctions.enable = true;
   };
 }
