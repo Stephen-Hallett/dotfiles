@@ -22,8 +22,7 @@
         cat = "bat";
         pip = "pip3";
         python = "python3";
-        ls =
-          "eza --icons=always --color=always --long --no-filesize --no-time --no-user --group-directories-first";
+        ls = "eza --long --no-filesize --no-time";
         cd = "z";
       };
       history = {
