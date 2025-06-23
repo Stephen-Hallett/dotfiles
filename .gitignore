@@ -3,3 +3,6 @@ Brewfile.lock.json
 .DS_Store
 node_modules
 config.vsix
+rstudio/
+nvim/
+environment.d/

@@ -1,8 +1,0 @@
-{
-    "jobs_tab_visibility": "shown",
-    "document_author": "Stephen Hallett",
-    "default_project_location": "~/R",
-    "rmd_auto_date": true,
-    "source_with_echo": true,
-    "save_files_before_build": true
-}
