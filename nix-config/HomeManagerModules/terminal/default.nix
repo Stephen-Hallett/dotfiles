@@ -13,5 +13,6 @@
     ./homebrew/homebrew.nix
     ./shellFunctions
     ./clipboard.nix
+    ./openMessage/openMessage.nix
   ];
 }

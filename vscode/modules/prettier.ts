@@ -13,6 +13,8 @@ export function configurePrettier(
     "javascriptreact",
     "typescriptreact",
     "json",
+    "jsonc",
+    "jsonl",
   ]) {
     config.update(
       `[${language}]`,

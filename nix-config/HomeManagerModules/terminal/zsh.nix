@@ -41,9 +41,6 @@
       initContent = ''
         zstyle :compinstall filename "$HOME/.zshrc"
 
-        source ~/dotfiles/open_message.sh
-        echo "\033[1;32m$message\033[0m"
-
         unsetopt beep
 
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
