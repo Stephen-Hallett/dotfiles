@@ -87,6 +87,7 @@
         "${work.user}" = mkHomeConfig ./hosts/workWSL/home.nix "x86_64-linux";
         "${workMac.user}" =
           mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
+	"HomeNix" = mkHomeConfig ./hosts/homeNix/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {
@@ -112,7 +113,7 @@
       nixosConfigurations = {
         stevohome = nixpkgs.lib.nixosSystem rec {
           inherit specialArgs;
-          modules = [ ./nix-config/Hosts/homeNix/configuration.nix ];
+          modules = [ ./hosts/homeNix/configuration.nix ];
         };
 
       };

@@ -2,8 +2,8 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    ./../Core/configuration.nix
-    # ./hardware-configuration.nix
+    ./../core/configuration.nix
+    ./hardware-configuration.nix
   ];
 
   nix-config = {
@@ -16,7 +16,6 @@
     docker.enable = true;
     fonts.enable = true;
     neovim.enable = true;
-    nextcloud.enable = false; # Reconfigure with with sops integration
   };
 
   # Bootloader.
@@ -28,7 +27,7 @@
   hardware.enableAllFirmware = true;
 
   networking.hostName = "stevohome"; # Define your hostname.
-  networking.wireless.enable = true;
+  #networking.wireless.enable = true;
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -45,9 +44,5 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 
 }
