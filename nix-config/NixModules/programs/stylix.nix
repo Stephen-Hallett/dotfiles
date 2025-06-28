@@ -26,7 +26,7 @@
       cursor = {
         package = pkgs.catppuccin-cursors.macchiatoDark;
         name = "catppuccin-macchiato-dark-cursors";
-        size = 12;
+        size = 8;
       };
 
       opacity = {
@@ -36,5 +36,7 @@
         popups = 0.99;
       };
     };
+
+    environment.variables = { XCURSOR_SIZE = "8"; };
   };
 }

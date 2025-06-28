@@ -77,6 +77,7 @@
           modules = [
             ./HomeManagerModules
             inputs.nixvim.homeManagerModules.nixvim
+            inputs.stylix.homeModules.stylix
             machineModule
           ];
         };
