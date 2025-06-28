@@ -18,6 +18,7 @@
     neovim.enable = true;
     firefox.enable = true;
     stylix.enable = true;
+    google-chrome.enable = true;
   };
 
   # Bootloader.

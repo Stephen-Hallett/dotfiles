@@ -11,7 +11,10 @@
       base16Scheme =
         "${pkgs.base16-schemes}/share/themes/catppuccin-macchiato.yaml";
 
-      targets = { grub.enable = false; };
+      targets = {
+        grub.enable = false;
+        chromium.enable = false;
+      };
 
       # Stylix needs an image for some reason
       image = ../../../fuji-palette.png;
