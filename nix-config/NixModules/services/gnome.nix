@@ -1,9 +1,7 @@
 { pkgs, lib, config, ... }: {
-  options = {
-    nix-config.desktop.enable = lib.mkEnableOption "enable desktop";
-  };
+  options = { nix-config.gnome.enable = lib.mkEnableOption "enable gnome"; };
 
-  config = lib.mkIf config.nix-config.desktop.enable {
+  config = lib.mkIf config.nix-config.gnome.enable {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
 
@@ -16,5 +14,8 @@
       layout = "nz";
       variant = "";
     };
+
+    systemd.services."getty@tty1".enable = false;
+    systemd.services."autovt@tty1".enable = false;
   };
 }

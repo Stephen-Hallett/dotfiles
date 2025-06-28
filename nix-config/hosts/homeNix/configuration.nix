@@ -8,7 +8,7 @@
 
   nix-config = {
     bluetooth.enable = true;
-    desktop.enable = true;
+    gnome.enable = true;
     steam.enable = true;
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
@@ -64,7 +64,4 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@tty1".enable = false;
 }
