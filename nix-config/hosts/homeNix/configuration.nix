@@ -29,7 +29,7 @@
 
   hardware.enableAllFirmware = true;
   # For my Nvidia GPU
-  hardware.opengl = { enable = true; };
+  hardware.graphics = { enable = true; };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia = {
     modesetting.enable = true;
