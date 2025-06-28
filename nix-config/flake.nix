@@ -20,10 +20,15 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
+    stylix = {
+      url = "github:nix-community/stylix/release-25.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-    , nix-homebrew, ... }@inputs:
+    , nix-homebrew, stylix, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -87,7 +92,8 @@
         "${work.user}" = mkHomeConfig ./hosts/workWSL/home.nix "x86_64-linux";
         "${workMac.user}" =
           mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
-	"HomeNix" = mkHomeConfig ./hosts/homeNix/home.nix "x86_64-linux";
+        "stephen@stevohome" =
+          mkHomeConfig ./hosts/homeNix/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {
@@ -113,7 +119,8 @@
       nixosConfigurations = {
         stevohome = nixpkgs.lib.nixosSystem rec {
           inherit specialArgs;
-          modules = [ ./hosts/homeNix/configuration.nix ];
+          modules =
+            [ stylix.nixosModules.stylix ./hosts/homeNix/configuration.nix ];
         };
 
       };

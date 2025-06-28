@@ -16,6 +16,8 @@
     docker.enable = true;
     fonts.enable = true;
     neovim.enable = true;
+    firefox.enable = true;
+    stylix.enable = true;
   };
 
   # Bootloader.
@@ -45,4 +47,6 @@
     #media-session.enable = true;
   };
 
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@tty1".enable = false;
 }
