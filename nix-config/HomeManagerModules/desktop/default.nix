@@ -1,1 +1,1 @@
-{ imports = [ ]; }
+{ imports = [ ./lutris.nix ]; }

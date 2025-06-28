@@ -1,7 +1,6 @@
 { lib, config, pkgs, ... }: {
-  options = { nix-config.steam.enable = lib.mkEnableOption "enable steam"; };
 
-  config = lib.mkIf config.nix-config.steam.enable {
+  config = lib.mkIf config.nix-config.gaming.enable {
     programs = {
       steam = {
         enable = true;

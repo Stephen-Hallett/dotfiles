@@ -9,7 +9,7 @@
   nix-config = {
     bluetooth.enable = true;
     plasma.enable = true;
-    steam.enable = true;
+    gaming.enable = true;
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
     coding.enable = true;

@@ -7,4 +7,6 @@
 
   unix-packages = { alacritty.enable = true; };
   common-packages = { tmux.enable = true; };
+  nix-packages = { lutris.enable = false; };
+
 }
