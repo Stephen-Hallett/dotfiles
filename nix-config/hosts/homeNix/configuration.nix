@@ -8,7 +8,7 @@
 
   nix-config = {
     bluetooth.enable = true;
-    gnome.enable = true;
+    plasma.enable = true;
     steam.enable = true;
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
