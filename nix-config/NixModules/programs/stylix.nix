@@ -14,6 +14,7 @@
       targets = {
         grub.enable = false;
         chromium.enable = false;
+        spicetify.enable = false;
       };
 
       # Stylix needs an image for some reason
@@ -24,12 +25,6 @@
           package = pkgs-unstable.nerd-fonts.fantasque-sans-mono;
           name = "Fantasque Sans Mono";
         };
-      };
-
-      cursor = {
-        package = pkgs.catppuccin-cursors.macchiatoDark;
-        name = "catppuccin-macchiato-dark-cursors";
-        size = 8;
       };
 
       opacity = {

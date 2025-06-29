@@ -17,6 +17,7 @@
     fonts.enable = true;
     neovim.enable = true;
     firefox.enable = true;
+    spotify.enable = true;
     stylix.enable = true;
     google-chrome.enable = true;
   };

@@ -25,10 +25,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-    , nix-homebrew, stylix, ... }@inputs:
+    , nix-homebrew, spicetify-nix, stylix, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -120,8 +121,11 @@
       nixosConfigurations = {
         stevohome = nixpkgs.lib.nixosSystem rec {
           inherit specialArgs;
-          modules =
-            [ stylix.nixosModules.stylix ./hosts/homeNix/configuration.nix ];
+          modules = [
+            spicetify-nix.nixosModules.default
+            stylix.nixosModules.stylix
+            ./hosts/homeNix/configuration.nix
+          ];
         };
 
       };
