@@ -1,6 +1,7 @@
 {
   imports = [
     ./browsers
+    ./discord.nix
     ./gaming
     ./coding.nix
     ./docker.nix

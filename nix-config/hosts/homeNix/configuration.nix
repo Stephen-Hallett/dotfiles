@@ -13,6 +13,7 @@
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
     coding.enable = true;
+    discord.enable = true;
     docker.enable = true;
     fonts.enable = true;
     neovim.enable = true;
@@ -65,4 +66,10 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+
 }
