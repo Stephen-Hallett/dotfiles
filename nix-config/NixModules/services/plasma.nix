@@ -20,5 +20,12 @@
       ark
     ];
 
+    environment.systemPackages = with pkgs; [
+      whitesur-kde # MacOS theme
+      whitesur-icon-theme
+      whitesur-gtk-theme
+      whitesur-cursors
+      kdePackages.kcoreaddons
+    ];
   };
 }
