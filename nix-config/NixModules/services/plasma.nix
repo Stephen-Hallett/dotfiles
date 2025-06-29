@@ -10,5 +10,15 @@
 
     systemd.services."getty@tty1".enable = false;
     systemd.services."autovt@tty1".enable = false;
+
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
+      plasma-browser-integration
+      konsole
+      elisa
+      gwenview
+      kate
+      ark
+    ];
+
   };
 }
