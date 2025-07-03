@@ -6,10 +6,7 @@
     brews = [ ];
     casks = [
       # ----- General -----
-      "postman"
-      "orbstack"
       "vlc"
-      "rstudio"
       "git-credential-manager"
     ];
     masApps = {

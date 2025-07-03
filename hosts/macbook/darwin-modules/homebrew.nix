@@ -7,9 +7,6 @@
     ];
     casks = [
       # ----- General -----
-      "postman"
-      "orbstack"
-      "rstudio"
       "zoom"
       "spotify"
       "discord"

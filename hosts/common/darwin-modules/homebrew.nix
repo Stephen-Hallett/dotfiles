@@ -15,6 +15,9 @@
       "firefox"
       "google-chrome"
       "font-fantasque-sans-mono-nerd-font"
+      "postman"
+      "orbstack"
+      "rstudio"
     ];
     masApps = { };
     onActivation.autoUpdate = true;
