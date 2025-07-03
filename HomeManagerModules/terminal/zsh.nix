@@ -8,7 +8,7 @@
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
 
-      shellAliases = let flakeDir = "~/dotfiles/nix-config";
+      shellAliases = let flakeDir = "~/dotfiles";
       in {
         hms = "home-manager switch --impure --flake ${flakeDir} && exec zsh";
         drs =
