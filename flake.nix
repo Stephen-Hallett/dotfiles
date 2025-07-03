@@ -86,29 +86,29 @@
       homeConfigurations = {
         # HomePC
         "${homePC.user}@${homePC.hostname}" =
-          mkHomeConfig ./hosts/homeWSL/home.nix "x86_64-linux";
+          mkHomeConfig ./Hosts/homeWSL/home.nix "x86_64-linux";
         # Macbook
         "${macbook.user}@${macbook.hostname}" =
-          mkHomeConfig ./hosts/macbook/home.nix "aarch64-darwin";
+          mkHomeConfig ./Hosts/macbook/home.nix "aarch64-darwin";
         # Work WSL
-        "${work.user}" = mkHomeConfig ./hosts/workWSL/home.nix "x86_64-linux";
+        "${work.user}" = mkHomeConfig ./Hosts/workWSL/home.nix "x86_64-linux";
         "${workMac.user}" =
-          mkHomeConfig ./hosts/workMac/home.nix "aarch64-darwin";
+          mkHomeConfig ./Hosts/workMac/home.nix "aarch64-darwin";
         "stephen@stevohome" =
-          mkHomeConfig ./hosts/homeNix/home.nix "x86_64-linux";
+          mkHomeConfig ./Hosts/homeNix/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {
         "macbook" = nix-darwin.lib.darwinSystem {
           modules = [
-            ./hosts/macbook/configuration.nix
+            ./Hosts/macbook/configuration.nix
             nix-homebrew.darwinModules.nix-homebrew
           ];
         };
 
         "work" = nix-darwin.lib.darwinSystem {
           modules = [
-            ./hosts/workMac/configuration.nix
+            ./Hosts/workMac/configuration.nix
             nix-homebrew.darwinModules.nix-homebrew
           ];
         };
@@ -120,7 +120,7 @@
           modules = [
             spicetify-nix.nixosModules.default
             stylix.nixosModules.stylix
-            ./hosts/homeNix/configuration.nix
+            ./Hosts/homeNix/configuration.nix
           ];
         };
 
