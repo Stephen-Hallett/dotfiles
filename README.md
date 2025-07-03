@@ -1,14 +1,5 @@
 # Dotfiles config with Home-manager, Nix-Darwin & Homebrew
 
-### Install with Just
-
-> [!IMPORTANT]
-> Ensure you have installed curl, git & just, then run the following command.
-
-```sh
-just -f <(curl -sL https://raw.githubusercontent.com/stephen-hallett/dotfiles/main/justfile)
-```
-
 ### Manual install
 
 ```sh
