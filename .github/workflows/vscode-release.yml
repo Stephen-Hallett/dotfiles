@@ -5,10 +5,12 @@ on:
     branches: ["main"]
     paths:
       - "vscode/**"
+      - ".github/workflows/vscode-release.yml"
   pull_request:
     branches: ["main"]
     paths:
       - "vscode/package.json"
+      - ".github/workflows/vscode-release.yml"
   workflow_dispatch:
 
 defaults:
