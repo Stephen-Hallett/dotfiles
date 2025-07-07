@@ -13,6 +13,10 @@ on:
       - ".github/workflows/vscode-release.yml"
   workflow_dispatch:
 
+permissions:
+  contents: write
+  packages: write
+
 defaults:
   run:
     working-directory: ./vscode
