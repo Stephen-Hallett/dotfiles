@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vscode-config.vsix
-          path: release/vscode-config.vsix
+          path: vscode/release/vscode-config.vsix
 
   release:
     needs:
