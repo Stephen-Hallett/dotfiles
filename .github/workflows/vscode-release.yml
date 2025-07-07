@@ -73,13 +73,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: latest
+          tag_name: ${{ github.sha }}
           release_name: Latest Release
           draft: false
           prerelease: false
 
       - name: Upload VSIX files to Release
         run: |
-          find ./release -name '*.vsix' -exec gh release upload latest {} \;
+          find ./release -name '*.vsix' -exec gh release upload ${{ github.sha }} {} \;
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
