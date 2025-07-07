@@ -67,19 +67,25 @@ jobs:
       - name: Install GitHub CLI
         run: sudo apt-get update && sudo apt-get install -y gh
 
+      - name: Set release tag and name
+        id: set_tag
+        run: |
+          echo "tag=$(date +'%Y%m%d-%H%M')" >> $GITHUB_OUTPUT
+          echo "today_date=$(date '+%-d %b %Y %H:%M')" >> $GITHUB_OUTPUT
+
       - name: Create GitHub Release
         id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.sha }}
-          release_name: Latest Release
+          tag_name: ${{ steps.set_tag.outputs.tag }}
+          release_name: VSCode Config ${{ steps.set_tag.outputs.today_date }}
           draft: false
           prerelease: false
 
       - name: Upload VSIX files to Release
         run: |
-          find ./release -name '*.vsix' -exec gh release upload ${{ github.sha }} {} \;
+          find ./release -name '*.vsix' -exec gh release upload ${{ steps.set_tag.outputs.tag }} {} \;
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
