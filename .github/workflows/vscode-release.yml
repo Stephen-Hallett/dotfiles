@@ -1,0 +1,82 @@
+name: Create VSCode Releases
+
+on:
+  push:
+    branches: ["main"]
+    paths:
+      - "vscode/**"
+  pull_request:
+    branches: ["main"]
+    paths:
+      - "vscode/package.json"
+  workflow_dispatch:
+
+defaults:
+  run:
+    working-directory: ./vscode
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile TypeScript
+        run: npx tsc --project tsconfig.json
+
+      - name: Create release folder
+        run: mkdir -p release
+
+      - name: Package extension
+        run: npx vsce package --out release/vscode-config.vsix
+
+      - name: Upload VSIX as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: vscode-config.vsix
+          path: release/vscode-config.vsix
+
+  release:
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: ./release
+
+      - name: Install GitHub CLI
+        run: sudo apt-get update && sudo apt-get install -y gh
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: latest
+          release_name: Latest Release
+          draft: false
+          prerelease: false
+
+      - name: Upload VSIX files to Release
+        run: |
+          find ./release -name '*.vsix' -exec gh release upload latest {} \;
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
