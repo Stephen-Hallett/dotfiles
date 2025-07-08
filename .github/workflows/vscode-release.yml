@@ -4,12 +4,12 @@ on:
   push:
     branches: ["main"]
     paths:
-      - "vscode/**"
+      - "VSCode/**"
       - ".github/workflows/vscode-release.yml"
   pull_request:
     branches: ["main"]
     paths:
-      - "vscode/package.json"
+      - "VSCode/package.json"
       - ".github/workflows/vscode-release.yml"
   workflow_dispatch:
 
@@ -19,7 +19,7 @@ permissions:
 
 defaults:
   run:
-    working-directory: ./vscode
+    working-directory: ./VSCode
 
 jobs:
   build:
@@ -49,7 +49,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: vscode-config.vsix
-          path: vscode/release/vscode-config.vsix
+          path: VSCode/release/vscode-config.vsix
 
   release:
     needs:
