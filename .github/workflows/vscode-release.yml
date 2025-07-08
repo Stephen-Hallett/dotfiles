@@ -90,6 +90,6 @@ jobs:
 
       - name: Upload VSIX files to Release
         run: |
-          find ./release -name '*.vsix' -exec gh release upload ${{ steps.set_tag.outputs.tag }} {} \;
+          find ../release -name '*.vsix' -exec gh release upload ${{ steps.set_tag.outputs.tag }} {} \;
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
