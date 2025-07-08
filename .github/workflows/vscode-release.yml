@@ -64,9 +64,9 @@ jobs:
         with:
           path: ./release
           merge-multiple: true
-        
+
       - name: List downloaded files
-        run: ls -R ./release && pwd
+        run: ls && pwd
 
       - name: Install GitHub CLI
         run: sudo apt-get update && sudo apt-get install -y gh
