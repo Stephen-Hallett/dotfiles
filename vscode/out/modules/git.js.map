@@ -1,1 +1,0 @@
-{"version":3,"file":"git.js","sourceRoot":"","sources":["../../modules/git.ts"],"names":[],"mappings":";;AAEA,oCAKC;AALD,SAAgB,YAAY,CAC1B,MAAsE;IAEtE,MAAM,CAAC,MAAM,CAAC,eAAe,EAAE,IAAI,EAAE,IAAI,CAAC,CAAC;IAC3C,MAAM,CAAC,MAAM,CAAC,uBAAuB,EAAE,IAAI,EAAE,IAAI,CAAC,CAAC;AACrD,CAAC"}
