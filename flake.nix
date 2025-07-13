@@ -103,6 +103,7 @@
           modules = [
             ./Hosts/macbook/configuration.nix
             nix-homebrew.darwinModules.nix-homebrew
+            stylix.darwinModules.stylix
           ];
         };
 

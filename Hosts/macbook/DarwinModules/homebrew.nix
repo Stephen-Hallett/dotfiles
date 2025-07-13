@@ -1,10 +1,11 @@
 { pkgs, ... }: {
-  nix-homebrew = { user = "stephen"; };
+  nix-homebrew = {
+    user = "stephen";
+    autoMigrate = false;
+  };
 
   homebrew = {
-    brews = [
-     "postgresql@17"
-    ];
+    brews = [ "postgresql@17" ];
     casks = [
       # ----- General -----
       "zoom"
