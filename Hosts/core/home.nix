@@ -38,7 +38,7 @@
     git.enable = true;
     ripgrep.enable = true;
     shellfunctions.enable = true;
-    open-message.enable = true;
+    open-message.enable = false;
     vscode-config.enable = true;
   };
 }
