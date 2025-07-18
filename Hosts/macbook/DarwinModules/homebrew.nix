@@ -24,6 +24,7 @@
       "Notability" = 360593530;
       "Xcode" = 497799835;
       "Infuse" = 1136220934;
+      "Moonlight" = 1000551566;
     };
     onActivation.autoUpdate = true;
     onActivation.upgrade = true;
