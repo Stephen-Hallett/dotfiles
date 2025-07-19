@@ -17,7 +17,6 @@
       "runelite"
       "autodesk-fusion"
       "arduino-ide"
-      "tailscale"
       "nextcloud"
     ];
     masApps = {

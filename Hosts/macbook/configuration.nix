@@ -1,7 +1,7 @@
-{ pkgs, config, ... }: {
-  imports = [ ../../DarwinModules ./DarwinModules ];
+{ pkgs, pkgs-unstable, config, ... }: {
+  imports = [ ./DarwinModules ];
 
-  environment.systemPackages = with pkgs; [ tailscale ];
+  environment.systemPackages = with pkgs; [ ];
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";

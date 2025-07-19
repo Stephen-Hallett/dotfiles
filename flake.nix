@@ -82,6 +82,19 @@
             machineModule
           ];
         };
+
+      mkDarwinConfig = machineModule: system:
+        nix-darwin.lib.darwinSystem rec {
+          inherit specialArgs;
+          pkgs = import nixpkgs { inherit system; };
+
+          modules = [
+            ./DarwinModules
+            nix-homebrew.darwinModules.nix-homebrew
+            stylix.darwinModules.stylix
+            machineModule
+          ];
+        };
     in {
       homeConfigurations = {
         # HomePC
@@ -99,20 +112,11 @@
       };
 
       darwinConfigurations = {
-        "macbook" = nix-darwin.lib.darwinSystem {
-          modules = [
-            ./Hosts/macbook/configuration.nix
-            nix-homebrew.darwinModules.nix-homebrew
-            stylix.darwinModules.stylix
-          ];
-        };
+        "macbook" =
+          mkDarwinConfig ./Hosts/macbook/configuration.nix "aarch64-darwin";
 
-        "work" = nix-darwin.lib.darwinSystem {
-          modules = [
-            ./Hosts/workMac/configuration.nix
-            nix-homebrew.darwinModules.nix-homebrew
-          ];
-        };
+        "work" =
+          mkDarwinConfig ./Hosts/workMac/configuration.nix "aarch64-darwin";
       };
 
       nixosConfigurations = {

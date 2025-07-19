@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   services = {
     jankyborders = {
       enable = true;
@@ -11,5 +11,7 @@
       width = 5.5;
       order = "above";
     };
+
+    tailscale.enable = true;
   };
 }
