@@ -1,1 +1,1 @@
-{ imports = [ ./networking.nix ./gnome.nix ./tailscale.nix ./plasma.nix ]; }
+{ imports = [ ./networking.nix ./tailscale.nix ]; }

@@ -1,1 +1,10 @@
-{ imports = [ ./hardware ./programs ./services ./settings ]; }
+{
+  imports = [
+    ./hardware
+    ./programs
+    ./services
+    ./settings
+    ./desktops
+    ./display-managers
+  ];
+}

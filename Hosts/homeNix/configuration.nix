@@ -9,6 +9,7 @@
   nix-config = {
     bluetooth.enable = true;
     plasma.enable = true;
+    gnome.enable = false;
     gaming.enable = true;
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
@@ -18,6 +19,7 @@
     fonts.enable = true;
     neovim.enable = true;
     firefox.enable = true;
+    sddm.enable = true;
     spotify.enable = true;
     stylix.enable = true;
     google-chrome.enable = true;
