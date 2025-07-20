@@ -8,9 +8,10 @@
 
   nix-config = {
     bluetooth.enable = true;
-    plasma.enable = true;
+    plasma.enable = false;
     gnome.enable = false;
     gaming.enable = true;
+    hyprland.enable = true;
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
     coding.enable = true;
