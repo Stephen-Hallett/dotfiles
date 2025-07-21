@@ -1,1 +1,1 @@
-{ imports = [ ./coding ./terminal ./desktop ./homelab ]; }
+{ imports = [ ./coding ./terminal ./desktop ./homelab ./wm ]; }

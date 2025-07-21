@@ -7,6 +7,13 @@
 
   unix-packages = { alacritty.enable = true; };
   common-packages = { tmux.enable = true; };
-  nix-packages = { lutris.enable = false; };
+  nix-packages = {
+    lutris.enable = false;
+    hyprland = {
+      enable = true;
+      monitor-setup = "double";
+      mouse-sensitivity = "-0.7";
+    };
+  };
 
 }
