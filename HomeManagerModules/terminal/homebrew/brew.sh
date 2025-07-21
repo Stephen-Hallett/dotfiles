@@ -5,4 +5,4 @@ if ! command -v brew >/dev/null 2>&1; then
 fi
 
 export HOMEBREW_BUNDLE_FILE_GLOBAL="$HOME/dotfiles/HomeManagerModules/terminal/homebrew/Brewfile"
-brew bundle --global --file="$HOMEBREW_BUNDLE_FILE_GLOBAL"
+brew bundle --file="$HOMEBREW_BUNDLE_FILE_GLOBAL"
