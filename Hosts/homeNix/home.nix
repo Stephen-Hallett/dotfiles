@@ -14,6 +14,8 @@
       monitor-setup = "double";
       mouse-sensitivity = "-0.1";
     };
+    rofi.enable = true;
+    stylix.enable = true;
   };
 
 }

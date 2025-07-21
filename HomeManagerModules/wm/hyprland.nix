@@ -18,7 +18,7 @@
         xwayland.enable = true;
         settings = let inherit (config.lib.stylix) colors;
         in {
-          "$mainMod" = "SUPER";
+          "$mainMod" = "ALT";
 
           monitor = ",preferred,auto,1,bitdepth,10";
 
@@ -26,7 +26,6 @@
             "XDG_CURRENT_DESKTOP,Hyprland"
             "XDG_SESSION_TYPE,wayland"
             "XDG_SESSION_DESKTOP,Hyprland"
-            "XCURSOR_SIZE,12"
             "QT_QPA_PLATFORM,wayland"
             "XDG_SCREENSHOTS_DIR,~/screenshots"
             "GLFW_IM_MODULE,ibus"
@@ -122,18 +121,15 @@
           bind = [
             # "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
-            "$mainMod, T, exec, ghostty"
-            "$mainMod, W, killactive,"
-            "$mainMod, M, exit,"
+            "$mainMod, T, exec, alacritty"
+            "$mainMod, X, killactive,"
             "$mainMod, E, exec, thunar"
             "$mainMod, V, togglefloating,"
             "$mainMod, F, fullscreen, 1"
+            "$mainMod, SPACE, exec, rofi -show drun -no-levenshtein-sort -disable-history"
             "$mainMod, Super_L, exec, rofi -show drun -no-levenshtein-sort -disable-history"
-            "$mainMod, Super_R, exec, rofi -show drun -no-levenshtein-sort -disable-history"
             "$mainMod, P, pseudo, # dwindle"
             "$mainMod, S, togglesplit, # dwindle"
-            "$mainMod, B, exec, firefox"
-            "$mainMod, L, exec, hyprlock"
 
             ''$mainMod SHIFT, P, exec, grim -g "$(slurp)" - | swappy -f -''
 
@@ -182,10 +178,6 @@
             # Scroll through existing workspaces with mainMod + scroll
             "$mainMod, mouse_down, workspace, e+1"
             "$mainMod, mouse_up, workspace, e-1"
-
-            # Keyboard backlight
-            ", F5, exec, brightnessctl -d *::kbd_backlight set +33%"
-            ", F6, exec, brightnessctl -d *::kbd_backlight set 33%-"
 
             # Volume and Media Control
             ", XF86AudioRaiseVolume, exec, pamixer -i 5 "

@@ -18,7 +18,7 @@
       };
 
       # Stylix needs an image for some reason
-      image = ../../../fuji-palette.png;
+      image = ../../wallpaper.png;
 
       fonts = {
         monospace = {
