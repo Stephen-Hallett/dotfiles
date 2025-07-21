@@ -212,5 +212,16 @@
         };
       };
     })
+
+    (lib.mkIf (config.nix-packages.hyprland.enable
+      && config.nix-packages.hyprland.monitor-setup == "double") {
+        wayland.windowManager.hyprland = {
+          settings.monitor = lib.mkForce [
+            "DP-4,2560x1440@180,0x0,1,bitdepth,10"
+            "HDMI-A-2,1920x1080@60,2560x0,1,bitdepth,10,transform,1"
+          ];
+        };
+      })
+
   ];
 }

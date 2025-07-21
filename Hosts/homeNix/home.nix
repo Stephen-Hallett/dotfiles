@@ -12,7 +12,7 @@
     hyprland = {
       enable = true;
       monitor-setup = "double";
-      mouse-sensitivity = "-0.7";
+      mouse-sensitivity = "-0.1";
     };
   };
 
