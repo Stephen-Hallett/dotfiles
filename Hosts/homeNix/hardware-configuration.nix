@@ -10,6 +10,7 @@
     [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
+  boot.kernelParams = ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=1"];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
