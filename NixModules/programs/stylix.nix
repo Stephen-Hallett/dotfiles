@@ -27,6 +27,12 @@
         };
       };
 
+      cursor = {
+        package = pkgs.catppuccin-cursors.macchiatoDark;
+        name = "catppuccin-macchiato-dark-cursors";
+        size = 12;
+      };
+
       opacity = {
         applications = 0.99;
         desktop = 0.99;
@@ -34,7 +40,5 @@
         popups = 0.99;
       };
     };
-
-    environment.variables = { XCURSOR_SIZE = "8"; };
   };
 }
