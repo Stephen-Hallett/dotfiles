@@ -20,7 +20,9 @@
         in {
           "$mainMod" = "ALT";
 
-          monitor = ",preferred,auto,1,bitdepth,10";
+          monitor = ",highres,auto,1,bitdepth,10";
+
+          exec-once = [ "hyprctl dispatch workspace 1" ];
 
           env = [
             "XDG_CURRENT_DESKTOP,Hyprland"
@@ -57,7 +59,7 @@
             # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
             # "col.inactive_border" = "rgba(595959aa)";
 
-            layout = "dwindle";
+            layout = "master";
 
             resize_on_border = true;
           };
@@ -122,7 +124,7 @@
             # "$mainMod, V, exec, cliphist list | wofi --dmenu | cliphist decode | wl-copy"
 
             "$mainMod, T, exec, alacritty"
-            "$mainMod, X, killactive,"
+            "$mainMod, W, killactive,"
             "$mainMod, E, exec, thunar"
             "$mainMod, V, togglefloating,"
             "$mainMod, F, fullscreen, 1"
@@ -201,6 +203,9 @@
             "$mainMod, mouse:272, movewindow"
             "$mainMod, mouse:273, resizewindow"
           ];
+
+          workspace =
+            [ "name:1, monitor:DP-4, default:true" "name:2, monitor:HDMI-A-2" ];
         };
       };
     })
