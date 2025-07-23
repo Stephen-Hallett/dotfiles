@@ -26,10 +26,22 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-plugins = {
+      url = "github:hyprwm/hyprland-plugins";
+      inputs.hyprland.follows = "hyprland";
+    };
+    hy3 = {
+      url = "github:outfoxxed/hy3";
+      inputs.hyprland.follows = "hyprland";
+    };
+
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-    , nix-homebrew, spicetify-nix, stylix, ... }@inputs:
+    , nix-homebrew, spicetify-nix, stylix, hyprland, hyprland-plugins, hy3, ...
+    }@inputs:
     let
       inherit (self) outputs;
 

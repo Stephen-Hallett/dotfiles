@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ lib, config, inputs, pkgs, ... }: {
   options = {
     nix-packages.hyprland.enable = lib.mkEnableOption "enable hyprland";
     nix-packages.hyprland.monitor-setup = lib.mkOption {
@@ -19,8 +19,6 @@
         settings = let inherit (config.lib.stylix) colors;
         in {
           "$mainMod" = "ALT";
-
-          monitor = ",highres,auto,1,bitdepth,10";
 
           exec-once = [ "hyprctl dispatch workspace 1" ];
 
@@ -204,8 +202,10 @@
             "$mainMod, mouse:273, resizewindow"
           ];
 
-          workspace =
-            [ "name:1, monitor:DP-4, default:true" "name:2, monitor:HDMI-A-2" ];
+          workspace = [
+            "name:1, monitor:DP-4, default:true"
+            "name:2, monitor:HDMI-A-2, layoutopt:orientation:top"
+          ];
         };
       };
     })
@@ -214,7 +214,7 @@
       && config.nix-packages.hyprland.monitor-setup == "double") {
         wayland.windowManager.hyprland = {
           settings.monitor = lib.mkForce [
-            "DP-4,2560x1440@180,0x0,1,bitdepth,10"
+            "DP-4,2560x1440@180,0x0,auto,bitdepth,10"
             "HDMI-A-2,1920x1080@60,2560x0,1,bitdepth,10,transform,1"
           ];
         };
