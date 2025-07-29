@@ -10,6 +10,7 @@
       # ----- General -----
       "zoom"
       "spotify"
+      "betterdiscord-installer"
       "discord"
       # ----- Personal -----
       "ultimaker-cura"

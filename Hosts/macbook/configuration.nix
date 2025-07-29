@@ -1,7 +1,7 @@
 { pkgs, pkgs-unstable, config, ... }: {
   imports = [ ./DarwinModules ];
 
-  environment.systemPackages = with pkgs; [ ];
+  environment.systemPackages = with pkgs; [ catppuccin-discord ];
 
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";

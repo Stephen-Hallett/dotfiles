@@ -1,1 +1,1 @@
-{ imports = [ ./lutris.nix ./stylix.nix ]; }
+{ imports = [ ./lutris.nix ./discord.nix ./stylix.nix ]; }

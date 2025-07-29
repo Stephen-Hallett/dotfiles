@@ -5,5 +5,8 @@
 
   home = { packages = with pkgs; [ ]; };
 
-  unix-packages = { alacritty.enable = true; };
+  unix-packages = {
+    alacritty.enable = true;
+    discord.enable = false;
+  };
 }
