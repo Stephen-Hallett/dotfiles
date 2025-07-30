@@ -9,7 +9,6 @@
     casks = [
       # ----- General -----
       "zoom"
-      "spotify"
       "betterdiscord-installer"
       "discord"
       # ----- Personal -----

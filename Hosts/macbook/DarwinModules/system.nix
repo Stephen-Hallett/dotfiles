@@ -5,7 +5,7 @@
         persistent-apps = [
           "/System/Applications/Launchpad.app"
           "/Applications/Google Chrome.app"
-          "/Applications/Spotify.app"
+          "${pkgs.spotify}/Applications/Spotify.app"
           "/Applications/Visual Studio Code.app"
           "/Applications/Discord.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"

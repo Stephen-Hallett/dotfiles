@@ -91,6 +91,7 @@
             ./HomeManagerModules
             inputs.nixvim.homeManagerModules.nixvim
             inputs.stylix.homeModules.stylix
+            inputs.spicetify-nix.homeManagerModules.default
             machineModule
           ];
         };
@@ -98,7 +99,6 @@
       mkDarwinConfig = machineModule: system:
         nix-darwin.lib.darwinSystem rec {
           inherit specialArgs;
-          pkgs = import nixpkgs { inherit system; };
 
           modules = [
             ./DarwinModules
