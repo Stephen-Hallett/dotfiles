@@ -14,6 +14,7 @@
       targets = {
         alacritty.enable = false;
         starship.enable = false;
+        spicetify.enable = false;
       };
 
       # Stylix needs an image for some reason
@@ -23,6 +24,12 @@
         monospace = {
           package = pkgs-unstable.nerd-fonts.fantasque-sans-mono;
           name = "Fantasque Sans Mono";
+        };
+        sizes = {
+          applications = 10;
+          terminal = 10;
+          desktop = 8;
+          popups = 8;
         };
       };
 

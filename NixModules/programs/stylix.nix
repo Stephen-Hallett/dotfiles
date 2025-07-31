@@ -25,6 +25,12 @@
           package = pkgs-unstable.nerd-fonts.fantasque-sans-mono;
           name = "Fantasque Sans Mono";
         };
+        sizes = {
+          applications = 10;
+          terminal = 11;
+          desktop = 9;
+          popups = 9;
+        };
       };
 
       cursor = {

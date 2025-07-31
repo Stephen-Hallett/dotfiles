@@ -29,6 +29,10 @@
             "QT_QPA_PLATFORM,wayland"
             "XDG_SCREENSHOTS_DIR,~/screenshots"
             "GLFW_IM_MODULE,ibus"
+            "GBM_BACKEND,nvidia-drm"
+            "__GLX_VENDOR_LIBRARY_NAME,nvidia"
+            "WLR_NO_HARDWARE_CURSORS,1"
+            "LIBVA_DRIVER_NAME,nvidia"
           ];
 
           debug = {
@@ -89,7 +93,6 @@
               "winOut, 0.3, -0.3, 0, 1"
               "liner, 1, 1, 1, 1"
             ];
-
             animation = [
               "windows, 1, 6, wind, slide"
               "windowsIn, 1, 6, winIn, slide"
@@ -214,7 +217,7 @@
       && config.nix-packages.hyprland.monitor-setup == "double") {
         wayland.windowManager.hyprland = {
           settings.monitor = lib.mkForce [
-            "DP-4,2560x1440@180,0x0,auto,bitdepth,10"
+            "DP-4,2560x1440@180,0x0,1,bitdepth,10"
             "HDMI-A-2,1920x1080@60,2560x0,1,bitdepth,10,transform,1"
           ];
         };

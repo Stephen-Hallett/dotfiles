@@ -25,7 +25,7 @@
           };
         };
         font = {
-          size = 14;
+          size = 10;
           normal = {
             family = "FantasqueSansM Nerd Font";
             style = "Regular";

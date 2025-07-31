@@ -15,13 +15,13 @@
     tailscale.enable = false; # Reconfigure with with sops integration
     networking.enable = true;
     coding.enable = true;
-    discord.enable = true;
+    discord.enable = false;
     docker.enable = true;
     fonts.enable = true;
     neovim.enable = true;
     firefox.enable = true;
     sddm.enable = true;
-    spotify.enable = true;
+    spotify.enable = false;
     stylix.enable = true;
     google-chrome.enable = true;
   };
