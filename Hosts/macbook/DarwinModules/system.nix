@@ -9,6 +9,7 @@
           "/Applications/Visual Studio Code.app"
           "${pkgs.vesktop}/Applications/Vesktop.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
+          "/Applications/Jagex Launcher.app"
           "/Applications/Postman.app"
           "/Applications/Infuse.app"
           "/Applications/Notability.app"
