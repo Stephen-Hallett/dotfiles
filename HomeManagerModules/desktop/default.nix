@@ -1,1 +1,4 @@
-{ imports = [ ./lutris.nix ./discord.nix ./stylix.nix ./spotify/spotify.nix ]; }
+{
+  imports =
+    [ ./lutris.nix ./discord/discord.nix ./stylix.nix ./spotify/spotify.nix ];
+}

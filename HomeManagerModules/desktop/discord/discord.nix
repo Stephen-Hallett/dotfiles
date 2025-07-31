@@ -4,6 +4,9 @@
   };
 
   config = lib.mkIf config.unix-packages.discord.enable {
-    home.packages = with pkgs; [ discord catppuccin-discord ];
+    programs.vesktop = {
+      enable = true;
+      vencord = { themes = { catppuccin-macchiato = ./theme.css; }; };
+    };
   };
 }

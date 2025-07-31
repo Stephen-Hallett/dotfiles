@@ -9,8 +9,6 @@
     casks = [
       # ----- General -----
       "zoom"
-      "betterdiscord-installer"
-      "discord"
       # ----- Personal -----
       "ultimaker-cura"
       "jagex"

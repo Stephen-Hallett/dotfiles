@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, lib, ... }: {
   system = {
     defaults = {
       dock = {
@@ -7,7 +7,7 @@
           "/Applications/Google Chrome.app"
           "${pkgs.spotify}/Applications/Spotify.app"
           "/Applications/Visual Studio Code.app"
-          "/Applications/Discord.app"
+          "${pkgs.vesktop}/Applications/Vesktop.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
           "/Applications/Postman.app"
           "/Applications/Infuse.app"
