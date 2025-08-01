@@ -16,10 +16,8 @@
       wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
-        settings = let inherit (config.lib.stylix) colors;
-        in {
+        settings = {
           "$mainMod" = "ALT";
-
           exec-once = [ "hyprctl dispatch workspace 1" ];
 
           env = [
@@ -109,9 +107,14 @@
             pseudotile =
               true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
             preserve_split = true; # you probably want this
+            split_width_multiplier = 9999;
           };
 
-          master = { new_status = true; };
+          master = {
+            new_status = true;
+            center_master_fallback = "top";
+            allow_small_split = true;
+          };
 
           misc = {
             animate_manual_resizes = true;
@@ -207,7 +210,7 @@
 
           workspace = [
             "name:1, monitor:DP-4, default:true"
-            "name:2, monitor:HDMI-A-2, layoutopt:orientation:top"
+            "name:2, monitor:HDMI-A-2, layout:dwindle"
           ];
         };
       };
