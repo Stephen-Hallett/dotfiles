@@ -97,9 +97,16 @@
         };
 
       mkDarwinConfig = machineModule: system:
-        nix-darwin.lib.darwinSystem rec {
+        let
+          specialArgs = {
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+            inherit inputs personal;
+          };
+        in nix-darwin.lib.darwinSystem {
           inherit specialArgs;
-
           modules = [
             ./DarwinModules
             nix-homebrew.darwinModules.nix-homebrew
