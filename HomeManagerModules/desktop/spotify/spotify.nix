@@ -1,4 +1,4 @@
-{ lib, config, inputs, pkgs, ... }:
+{ lib, config, inputs, pkgs, pkgs-unstable, ... }:
 let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in {
   options = {
@@ -8,6 +8,8 @@ in {
   config = lib.mkIf config.unix-packages.spotify.enable {
     programs.spicetify = {
       enable = true;
+
+      spotifyPackage = pkgs-unstable.spotify;
 
       enabledExtensions = with spicePkgs.extensions; [ shuffle ];
       enabledCustomApps = with spicePkgs.apps; [ newReleases ncsVisualizer ];
@@ -19,6 +21,5 @@ in {
       };
       colorScheme = "catppuccin-macchiato-green";
     };
-
   };
 }

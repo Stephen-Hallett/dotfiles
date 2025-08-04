@@ -9,5 +9,6 @@
     ./shell-config.nix
     ./spotify/spotify.nix
     ./stylix.nix
+    ./thunar.nix
   ];
 }

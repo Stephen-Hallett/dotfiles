@@ -24,6 +24,7 @@
     spotify.enable = false;
     stylix.enable = true;
     google-chrome.enable = true;
+    thunar.enable = true;
   };
 
   # Bootloader.

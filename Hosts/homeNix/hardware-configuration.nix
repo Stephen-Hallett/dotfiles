@@ -10,7 +10,7 @@
     [ "nvme" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
-  boot.kernelParams = ["nvidia-drm.modeset=1" "nvidia-drm.fbdev=1"];
+  boot.kernelParams = [ "nvidia-drm.modeset=1" "nvidia-drm.fbdev=1" ];
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
@@ -26,8 +26,16 @@
 
   fileSystems."/home/stephen/Storage" = {
     device = "/dev/disk/by-uuid/4E680B05680AEB91";
-    fsType = "ntfs";
-    options = [ "rw" "uid=1000" "gid=100" ];
+    fsType = "ntfs-3g";
+    options = [
+      "rw"
+      "uid=1000"
+      "gid=100"
+      "exec"
+      "nofail"
+      "windows_names"
+      "big_writes"
+    ];
     neededForBoot = false;
   };
 
