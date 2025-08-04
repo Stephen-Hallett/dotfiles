@@ -5,4 +5,6 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
   system.primaryUser = "stephenhallett";
+
+  nix.enable= false; # Allow deteriminate nix to manage nix
 }
