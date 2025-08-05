@@ -25,6 +25,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
 
     hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
@@ -40,8 +45,8 @@
   };
 
   outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, nix-darwin
-    , nix-homebrew, spicetify-nix, stylix, hyprland, hyprland-plugins, hy3, ...
-    }@inputs:
+    , nix-homebrew, spicetify-nix, stylix, hyprland, hyprland-plugins, hy3
+    , sops-nix, ... }@inputs:
     let
       inherit (self) outputs;
 
@@ -111,6 +116,7 @@
             ./DarwinModules
             nix-homebrew.darwinModules.nix-homebrew
             stylix.darwinModules.stylix
+            sops-nix.darwinModules.sops
             machineModule
           ];
         };
@@ -144,6 +150,7 @@
           modules = [
             spicetify-nix.nixosModules.default
             stylix.nixosModules.stylix
+            sops-nix.nixosModules.sops
             ./Hosts/homeNix/configuration.nix
           ];
         };
