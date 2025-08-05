@@ -21,6 +21,7 @@
       curl
       nerd-fonts.symbols-only
       fd
+      sops
     ];
   };
 
