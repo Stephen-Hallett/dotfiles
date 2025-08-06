@@ -12,7 +12,7 @@
     gnome.enable = false;
     gaming.enable = true;
     hyprland.enable = true;
-    tailscale.enable = false; # Reconfigure with with sops integration
+    tailscale.enable = true;
     networking.enable = true;
     coding.enable = true;
     discord.enable = false;
