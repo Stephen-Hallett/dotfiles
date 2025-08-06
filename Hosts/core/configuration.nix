@@ -49,6 +49,12 @@
     description = "Stephen Hallett";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [ ];
+    openssh.authorizedKeys.keys = [
+      (builtins.readFile ./ssh/id_homewsl.pub) # Home WSL
+      (builtins.readFile ./ssh/id_macbook.pub) # Home Macbook
+      (builtins.readFile ./ssh/id_homelab.pub) # Homelab
+      (builtins.readFile ./ssh/id_homenix.pub) # Homenix
+    ];
   };
 
   # Enable automatic login for the user.
