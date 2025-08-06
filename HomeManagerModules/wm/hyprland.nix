@@ -43,6 +43,9 @@
             kb_variant = "";
             kb_options = "grp:alt_space_toggle";
 
+            repeat_rate = 33; # Repeats per second
+            repeat_delay = 225; # ms before repeats
+
             follow_mouse = 1;
 
             touchpad = { natural_scroll = false; };

@@ -9,7 +9,7 @@ in {
     programs.spicetify = {
       enable = true;
 
-      spotifyPackage = pkgs-unstable.spotify;
+      spotifyPackage = pkgs.spotify;
 
       enabledExtensions = with spicePkgs.extensions; [ shuffle ];
       enabledCustomApps = with spicePkgs.apps; [ newReleases ncsVisualizer ];
