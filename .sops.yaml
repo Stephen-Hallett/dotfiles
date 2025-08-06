@@ -1,7 +1,11 @@
 keys:
   - &macbook age1wy3a5945jsylwwud43dmrhkxw2gc7vqntxu9yltyje2wkkftsuqq4v8jkk
+  - &homenix age1mymxznwpgrxg42wj9rxxyfeyj6ham28chc6ak842xykp0ca8kvyqhk5ld5
+  - &homewsl age1wy3a5945jsylwwud43dmrhkxw2gc7vqntxu9yltyje2wkkftsuqq4v8jkk
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
     - age:
       - *macbook
+      - *homenix
+      - *homewsl

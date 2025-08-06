@@ -72,10 +72,11 @@
     defaultSopsFile = ../../secrets/secrets.yaml;
     defaultSopsFormat = "yaml";
     age = {
-      sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+      sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
       generateKey = true;
       keyFile = "/home/stephen/.config/sops/age/keys.txt";
     };
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 }
