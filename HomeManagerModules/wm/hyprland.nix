@@ -58,9 +58,6 @@
             border_size = 3;
             # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
             # "col.inactive_border" = "rgba(595959aa)";
-
-            layout = "master";
-
             resize_on_border = true;
           };
 
@@ -107,7 +104,7 @@
             pseudotile =
               true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
             preserve_split = true; # you probably want this
-            split_width_multiplier = 9999;
+            split_width_multiplier = 1.75;
           };
 
           master = {

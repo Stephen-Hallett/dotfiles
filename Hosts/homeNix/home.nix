@@ -16,7 +16,7 @@
     hyprland = {
       enable = true;
       monitor-setup = "double";
-      mouse-sensitivity = "-0.2";
+      mouse-sensitivity = "-0.1";
     };
     rofi.enable = true;
     stylix.enable = true;
