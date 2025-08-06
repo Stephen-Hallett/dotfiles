@@ -73,8 +73,15 @@
     defaultSopsFormat = "yaml";
     age = {
       sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
-      generateKey = true;
+      generateKey = false;
       keyFile = "/home/stephen/.config/sops/age/keys.txt";
+    };
+
+    secrets = {
+      tailscale = {
+        owner = config.users.users.stephen.name;
+        inherit (config.users.users.stephen) group;
+      };
     };
   };
 
