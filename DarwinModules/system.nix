@@ -7,6 +7,14 @@
       dock = {
         autohide = true;
         persistent-apps = [ ];
+        minimize-to-application = true;
+        tilesize = 38;
+        show-recents = false;
+
+        wvous-tl-corner = 4; # Desktop
+        wvous-tr-corner = 11; # Launchpad
+        wvous-bl-corner = 1; # Disabled
+        wvous-br-corner = 14; # Quick note
       };
       finder = {
         FXPreferredViewStyle = "clmv";
