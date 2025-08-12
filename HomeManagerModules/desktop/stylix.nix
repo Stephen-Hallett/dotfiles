@@ -1,9 +1,9 @@
 { pkgs, pkgs-unstable, lib, config, ... }: {
   options = {
-    nix-packages.stylix.enable = lib.mkEnableOption "enable stylix";
+    unix-packages.stylix.enable = lib.mkEnableOption "enable stylix";
   };
 
-  config = lib.mkIf config.nix-packages.stylix.enable {
+  config = lib.mkIf config.unix-packages.stylix.enable {
     stylix = {
       enable = true;
       polarity = "dark";
@@ -15,6 +15,7 @@
         alacritty.enable = false;
         starship.enable = false;
         spicetify.enable = false;
+        vesktop.enable = false;
       };
 
       # Stylix needs an image for some reason

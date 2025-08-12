@@ -8,6 +8,7 @@
   unix-packages = {
     alacritty.enable = true;
     spotify.enable = true;
+    stylix.enable = true;
     discord.enable = true;
   };
   common-packages = { tmux.enable = true; };
@@ -19,7 +20,6 @@
       mouse-sensitivity = "-0.1";
     };
     rofi.enable = true;
-    stylix.enable = true;
   };
 
 }

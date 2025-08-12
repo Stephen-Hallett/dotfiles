@@ -78,12 +78,12 @@
 
       macbook = {
         user = "stephen";
-        hostname = "Stephens-MacBook-Pro.local";
+        hostname = "StephensMacbook";
       };
 
       sansMacbook = {
         user = "sanskrutipatel";
-        hostname = "Sanskrutis-MacBook-Air.local";
+        hostname = "SansMacbook";
       };
 
       work = { user = "stephen"; };
