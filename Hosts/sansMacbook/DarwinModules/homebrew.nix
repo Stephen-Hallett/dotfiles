@@ -1,16 +1,34 @@
 { pkgs, ... }: {
   nix-homebrew = {
-    user = "sanskruti";
-    autoMigrate = true;
+    enable = true;
+    enableRosetta = true;
   };
 
   homebrew = {
     enable = true;
-    brews = [ ];
-    casks = [ "zoom" "nextcloud" ];
+    brews = [ "mas" ];
+    casks = [
+      # ----- General -----
+      "raycast"
+      "firefox"
+      "google-chrome"
+      "rstudio"
+      "notion"
+      "zoom"
+      "font-cousine-nerd-font"
+      # ----- Study -----
+      "microsoft-office"
+      "openfortivpn"
+      "zotero"
+      # ----- Stephen Stuff -----
+      "nextcloud"
+    ];
     masApps = {
+      "Notability" = 360593530;
       "Infuse" = 1136220934;
-      # "Notability" = 360593530;
     };
+    onActivation.autoUpdate = true;
+    onActivation.upgrade = true;
+    onActivation.cleanup = "zap";
   };
 }

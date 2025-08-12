@@ -1,1 +1,4 @@
-{ imports = [ ./homebrew.nix ./system.nix ]; }
+{
+  imports =
+    [ ./core.nix ./homebrew.nix ./system.nix ./security.nix ./sops.nix ];
+}

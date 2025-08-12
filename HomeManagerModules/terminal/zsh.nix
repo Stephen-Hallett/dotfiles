@@ -11,8 +11,7 @@
       shellAliases = let flakeDir = "~/dotfiles";
       in {
         hms = "home-manager switch --impure --flake ${flakeDir} && exec zsh";
-        drs =
-          "sudo darwin-rebuild switch --flake ${flakeDir}#macbook && exec zsh";
+        drs = "sudo darwin-rebuild switch --flake ${flakeDir} && exec zsh";
         drs-work =
           "sudo darwin-rebuild switch --flake ${flakeDir}#work && exec zsh";
         rb = "sudo nixos-rebuild switch --impure --flake ${flakeDir}";

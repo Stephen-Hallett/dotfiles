@@ -57,7 +57,7 @@
 
       extraSpecialArgs = {
         pkgs-unstable = import nixpkgs-unstable { config.allowUnfree = true; };
-        inherit inputs personal homePC macbook work default;
+        inherit inputs personal homePC macbook work default sansMacbook;
       };
 
       personal = {
@@ -79,6 +79,11 @@
       macbook = {
         user = "stephen";
         hostname = "Stephens-MacBook-Pro.local";
+      };
+
+      sansMacbook = {
+        user = "sanskrutipatel";
+        hostname = "Sanskrutis-MacBook-Air.local";
       };
 
       work = { user = "stephen"; };
@@ -128,6 +133,9 @@
         # Macbook
         "${macbook.user}@${macbook.hostname}" =
           mkHomeConfig ./Hosts/macbook/home.nix "aarch64-darwin";
+        # Sans Macbook
+        "${sansMacbook.user}@${sansMacbook.hostname}" =
+          mkHomeConfig ./Hosts/sansMacbook/home.nix "aarch64-darwin";
         # Work WSL
         "${work.user}" = mkHomeConfig ./Hosts/workWSL/home.nix "x86_64-linux";
         "${workMac.user}" =
@@ -137,8 +145,11 @@
       };
 
       darwinConfigurations = {
-        "macbook" =
+        "StephensMacbook" =
           mkDarwinConfig ./Hosts/macbook/configuration.nix "aarch64-darwin";
+
+        "SansMacbook" =
+          mkDarwinConfig ./Hosts/sansMacbook/configuration.nix "aarch64-darwin";
 
         "work" =
           mkDarwinConfig ./Hosts/workMac/configuration.nix "aarch64-darwin";
