@@ -20,6 +20,7 @@
       mouse-sensitivity = "-0.1";
     };
     rofi.enable = true;
+    postman.enable = true;
   };
 
 }

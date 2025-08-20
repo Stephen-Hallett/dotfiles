@@ -5,6 +5,7 @@
 
   config = lib.mkIf config.unix-packages.discord.enable {
     programs.vesktop = {
+      package = pkgs-unstable.vesktop;
       enable = true;
       vencord = { themes = { catppuccin-macchiato = ./theme.css; }; };
     };
