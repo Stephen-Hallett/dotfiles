@@ -8,6 +8,7 @@
           "/Applications/Visual Studio Code.app"
           "${pkgs.vesktop}/Applications/Vesktop.app"
           "${pkgs.alacritty}/Applications/Alacritty.app"
+          "${config.programs.spicetify.spicedSpotify}/Applications/Spotify.app"
           "/Applications/Jagex Launcher.app"
           "/Applications/Postman.app"
           "/Applications/Infuse.app"

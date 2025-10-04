@@ -122,6 +122,7 @@
             nix-homebrew.darwinModules.nix-homebrew
             stylix.darwinModules.stylix
             sops-nix.darwinModules.sops
+            spicetify-nix.darwinModules.default
             machineModule
           ];
         };

@@ -2,10 +2,10 @@
 let spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
 in {
   options = {
-    unix-packages.spotify.enable = lib.mkEnableOption "enable spotify";
+    darwin-packages.spotify.enable = lib.mkEnableOption "enable spotify";
   };
 
-  config = lib.mkIf config.unix-packages.spotify.enable {
+  config = lib.mkIf config.darwin-packages.spotify.enable {
     programs.spicetify = {
       enable = true;
 
@@ -13,7 +13,7 @@ in {
 
       enabledExtensions = with spicePkgs.extensions; [ shuffle ];
       enabledCustomApps = with spicePkgs.apps; [ newReleases ncsVisualizer ];
-      enabledSnippets = with spicePkgs.snippets; [ pointer ];
+      enabledSnippets = with spicePkgs.snippets; [ ];
 
       theme = {
         name = "custom";

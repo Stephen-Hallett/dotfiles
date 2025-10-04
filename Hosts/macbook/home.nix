@@ -8,7 +8,7 @@
   unix-packages = {
     alacritty.enable = true;
     discord.enable = true;
-    spotify.enable = true;
+    spotify.enable = false;
     stylix.enable = true;
   };
 }
