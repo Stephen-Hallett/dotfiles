@@ -143,6 +143,8 @@
           mkHomeConfig ./Hosts/workMac/home.nix "aarch64-darwin";
         "stephen@stevohome" =
           mkHomeConfig ./Hosts/homeNix/home.nix "x86_64-linux";
+        "stephen@omarchy" =
+          mkHomeConfig ./Hosts/omarchy/home.nix "x86_64-linux";
       };
 
       darwinConfigurations = {

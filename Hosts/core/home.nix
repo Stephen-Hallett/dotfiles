@@ -34,12 +34,13 @@
     zsh.enable = true;
     zoxide.enable = true;
     starship.enable = true;
-    nixvim.enable = true;
+    nixvim.enable = false;
     eza.enable = true;
     git.enable = true;
     ripgrep.enable = true;
     shellfunctions.enable = true;
     open-message.enable = false;
-    vscode-config.enable = true;
+    vscode.enable = true;
+    firefox.enable = true;
   };
 }

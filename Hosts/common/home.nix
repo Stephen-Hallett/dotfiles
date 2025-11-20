@@ -9,9 +9,6 @@
     packages = with pkgs; [
       wget
       font-awesome
-      azure-cli
-      azure-functions-core-tools
-      terraform
       sqlite
       protobuf
       coreutils
