@@ -1,26 +1,14 @@
 # Specific config for my home wsl, inherits personal (and subsequently common & core) packages
 
 { pkgs, ... }: {
-  imports = [ ./../personal/home.nix ];
+  imports = [ ./../personal/home.nix ./omarchy.nix ];
 
   home = { packages = with pkgs; [ ]; };
 
   unix-packages = {
-#    alacritty.enable = true;
     spotify.enable = true;
-#    stylix.enable = true;
     discord.enable = true;
   };
   common-packages = { tmux.enable = true; };
-#  nix-packages = {
-#    lutris.enable = false;
-#    hyprland = {
-#      enable = true;
-#      monitor-setup = "double";
-#      mouse-sensitivity = "-0.1";
-#   };
-#    rofi.enable = true;
-#    postman.enable = true;
-#  };
 
 }

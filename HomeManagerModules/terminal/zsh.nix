@@ -38,6 +38,14 @@
       '';
 
       initContent = ''
+        export PATH="$HOME/.nix-profile/bin:$PATH"
+
+        # Source Nix daemon script if it exists (for multi-user installs)
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fi
+
+
         zstyle :compinstall filename "$HOME/.zshrc"
 
         unsetopt beep
