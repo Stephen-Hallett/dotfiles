@@ -1,14 +1,14 @@
 {
   "name": "vscode",
-  "displayName": "VSCode config",
+  "displayName": "Stephens VSCode config",
   "description": "VSCode extension pack & default settings",
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.90.0"
   },
   "activationEvents": [
     "onStartupFinished"
   ],
-  "version": "2.0.0",
+  "version": "2.1.0",
   "main": "./out/extension.js",
   "categories": [
     "Extension Packs"
@@ -18,25 +18,18 @@
     "catppuccin.catppuccin-vsc-icons",
     "charliermarsh.ruff",
     "christian-kohler.path-intellisense",
-    "detachhead.basedpyright",
     "esbenp.prettier-vscode",
     "github.vscode-github-actions",
     "GitHub.copilot",
     "GitHub.copilot-chat",
     "grapecity.gc-excelviewer",
     "Gruntfuggly.todo-tree",
-    "hashicorp.terraform",
     "jnoortheen.nix-ide",
-    "ms-azuretools.vscode-azurefunctions",
-    "ms-azuretools.vscode-azureresourcegroups",
-    "ms-azuretools.vscode-azurestorage",
-    "ms-azuretools.vscode-docker",
     "ms-toolsai.jupyter",
     "ms-toolsai.jupyter-keymap",
     "ms-toolsai.jupyter-renderers",
     "ms-toolsai.vscode-jupyter-cell-tags",
     "ms-toolsai.vscode-jupyter-slideshow",
-    "ms-vscode-remote.remote-wsl",
     "njpwerner.autodocstring",
     "redhat.vscode-yaml",
     "tamasfe.even-better-toml",

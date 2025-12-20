@@ -8,7 +8,6 @@ import { configurePrettier } from "./prettier";
 import { configureRuff } from "./ruff";
 import { configureSecurity } from "./security";
 import { configureTerminal } from "./terminal";
-import { configureTerraform } from "./terraform";
 import { configureCatppuccinMacchiato } from "./themes/catppuccin-macchiato";
 
 export function configureModules(
@@ -24,6 +23,5 @@ export function configureModules(
   configureRuff(config);
   configureSecurity(config);
   configureTerminal(config);
-  configureTerraform(config);
   configureCatppuccinMacchiato(config);
 }
