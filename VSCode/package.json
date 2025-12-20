@@ -2,6 +2,7 @@
   "name": "vscode",
   "displayName": "Stephens VSCode config",
   "description": "VSCode extension pack & default settings",
+  "publisher": "Stephen Hallett",
   "engines": {
     "vscode": "^1.90.0"
   },
