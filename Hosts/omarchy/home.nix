@@ -3,7 +3,7 @@
 { pkgs, ... }: {
   imports = [ ./../personal/home.nix ./omarchy.nix ];
 
-  home = { packages = with pkgs; [ ]; };
+  home = { packages = with pkgs; [ cmake ]; };
 
   unix-packages = {
     spotify.enable = true;
