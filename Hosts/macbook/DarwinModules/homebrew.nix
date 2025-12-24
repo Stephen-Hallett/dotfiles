@@ -16,6 +16,7 @@
       "arduino-ide"
       "nextcloud"
       "moonlight"
+      "creality-print"
     ];
     masApps = {
       "Notability" = 360593530;
