@@ -4,22 +4,25 @@
   config = lib.mkIf config.core-packages.git.enable {
     programs.git = {
       enable = true;
-      userName = "${personal.gitUser}";
-      userEmail = "${personal.gitEmail}";
 
-      aliases = { tree = "log --all --graph --decorate"; };
+      settings = {
+        alias = { tree = "log --all --graph --decorate"; };
+        user = {
+          name = "${personal.gitUser}";
+          email = "${personal.gitEmail}";
+        };
 
-      extraConfig = {
         init.defaultBranch = "main";
         pull.rebase = true;
       };
+    };
 
-      delta = {
-        enable = true;
-        options = {
-          navigate = true;
-          side-by-side = true;
-        };
+    programs.delta = {
+      enable = true;
+      enableGitIntegration = true;
+      options = {
+        navigate = true;
+        side-by-side = true;
       };
     };
   };

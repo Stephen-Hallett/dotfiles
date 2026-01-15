@@ -16,6 +16,8 @@
         starship.enable = false;
         spicetify.enable = false;
         vesktop.enable = false;
+        firefox = { profileNames = [ "Default" ]; };
+        vscode.enable = false;
       };
 
       # Stylix needs an image for some reason
@@ -27,10 +29,10 @@
           name = "Fantasque Sans Mono";
         };
         sizes = {
-          applications = 10;
-          terminal = 10;
-          desktop = 8;
-          popups = 8;
+          applications = 12;
+          terminal = 12;
+          desktop = 10;
+          popups = 10;
         };
       };
 

@@ -17,6 +17,8 @@
       "nextcloud"
       "moonlight"
       "creality-print"
+      "league-of-legends"
+      "cursor"
     ];
     masApps = {
       "Notability" = 360593530;
