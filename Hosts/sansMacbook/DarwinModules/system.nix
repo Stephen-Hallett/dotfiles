@@ -8,14 +8,13 @@
         autohide = true;
         persistent-apps = [
           "/System/Applications/Finder.app"
-          "/System/Applications/Launchpad.app"
+          "/System/Applications/Apps.app"
           "/System/Applications/Mail.app"
           "/Applications/Google Chrome.app"
           "/Applications/Microsoft Word.app"
           "/Applications/Infuse.app"
           "/System/Applications/System Settings.app"
           "/Applications/Microsoft Excel.app"
-
         ];
         minimize-to-application = true;
         tilesize = 50;

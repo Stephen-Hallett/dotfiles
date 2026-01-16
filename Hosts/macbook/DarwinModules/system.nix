@@ -3,7 +3,7 @@
     defaults = {
       dock = {
         persistent-apps = [
-          "/System/Applications/Launchpad.app"
+          "/System/Applications/Apps.app"
           "/Applications/Google Chrome.app"
           "/Applications/Visual Studio Code.app"
           "${pkgs.vesktop}/Applications/Vesktop.app"

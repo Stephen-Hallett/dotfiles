@@ -3,7 +3,7 @@
     defaults = {
       dock = {
         persistent-apps = [
-          "/System/Applications/Launchpad.app"
+          "/System/Applications/Apps.app"
           "/Applications/Firefox.app"
           "/Applications/Visual Studio Code.app"
           "/Applications/Microsoft Teams.app"
