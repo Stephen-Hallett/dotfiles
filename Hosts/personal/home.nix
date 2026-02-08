@@ -4,4 +4,6 @@
   imports = [ ./../common/home.nix ];
 
   home = { packages = with pkgs; [ vsce postgresql ]; };
+
+  common-packages = { claude-code.enable = true; };
 }
