@@ -16,8 +16,8 @@
     };
 
     # Nix darwin
-    nix-darwin.url = "github:LnL7/nix-darwin/nix-darwin-25.11";
-    nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
+    nix-darwin.url = "github:LnL7/nix-darwin/master";
+    nix-darwin.inputs.nixpkgs.follows = "nixpkgs-unstable";
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
 
     stylix = {

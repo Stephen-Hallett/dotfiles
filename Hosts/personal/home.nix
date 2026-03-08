@@ -5,5 +5,8 @@
 
   home = { packages = with pkgs; [ vsce postgresql ]; };
 
-  common-packages = { claude-code.enable = true; };
+  common-packages = { 
+    claude-code.enable = true;
+    obsidian.enable = true;
+   };
 }

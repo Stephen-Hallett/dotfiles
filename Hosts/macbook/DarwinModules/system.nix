@@ -12,8 +12,7 @@
           "/Applications/Jagex Launcher.app"
           "/Applications/Postman.app"
           "/Applications/Infuse.app"
-          "/Applications/Notability.app"
-          "/System/Applications/App Store.app"
+          "${pkgs-unstable.obsidian}/Applications/Obsidian.app"
           "/System/Applications/System Settings.app"
         ];
       };
