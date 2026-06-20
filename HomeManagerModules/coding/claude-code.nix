@@ -56,7 +56,7 @@
         };
 
         # Default model for all sessions
-        model = "claude-sonnet-4-5-20250929";
+        model = "sonnet";
 
         # Environment variables available in all Claude Code sessions
         env = {
