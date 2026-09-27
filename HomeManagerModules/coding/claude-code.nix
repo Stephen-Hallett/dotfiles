@@ -10,34 +10,9 @@
       package = pkgs-unstable.claude-code;
       settings = {
         permissions = {
-          allow = [
-            "Bash(npm run *)" # npm scripts (dev, build, test, etc.)
-            "Bash(bun *)" # Bun commands
-            "Bash(pnpm *)" # pnpm commands
-            "Bash(yarn *)" # Yarn commands
-            "Bash(npx *)" # npx commands
-            "Bash(uv *)" # UV commands
-            "Bash(python *)" # python commands
-            "Bash(fastapi *)" # fastapi commands
-
-            "Bash(docker *)" # Docker commands
-            "Bash(podman *)" # Podman commands
-
-            "Bash(git status)" # Check git status
-            "Bash(git diff *)" # View diffs
-            "Bash(git log *)" # View history
-            "Bash(git commit *)" # Create commits
-
-            # File operations - generally safe
-            "Read(**)" # Read any file (helpful for exploration)
-            "Edit(**)" # Edit files (can be overridden per-project)
-
-            # Testing and linting
-            "Bash(vitest *)" # Vitest test runner
-            "Bash(jest *)" # Jest test runner
-            "Bash(eslint *)" # ESLint
-            "Bash(prettier *)" # Prettier
-          ];
+          # Auto-approve everything except what's explicitly denied below.
+          # Deny rules always take precedence, even in bypassPermissions mode.
+          defaultMode = "bypassPermissions";
 
           deny = [
             # Protect sensitive files
